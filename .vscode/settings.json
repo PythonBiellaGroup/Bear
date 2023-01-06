@@ -1,0 +1,27 @@
+{
+  "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": false,
+  "python.linting.enabled": true,
+  "python.testing.pytestArgs": ["test"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "python.formatting.provider": "black",
+  "autoDocstring.customTemplatePath": ".vscode/google_no_types.mustache",
+  "window.title": "TemPY | ${rootName} ${separator} ${activeEditorShort}",
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "files.exclude": {
+    "**/__pycache__": true
+  },
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#ff4081",
+    "activityBar.background": "#4F1D22",
+    "titleBar.activeBackground": "#6F2830",
+    "titleBar.activeForeground": "#FEFBFC"
+  }
+}

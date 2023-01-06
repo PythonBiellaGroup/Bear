@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "{{cookiecutter.project}}"
+version = "0.1.0"
+description = "{{cookiecutter.project_description}}"
+authors = ["{{cookiecutter.author}}"]
+license = "{{cookiecutter.open_source_license}}"
+homepage = ""
+repository = ""
+documentation = ""
+
+classifiers = [
+    "Topic :: Base",
+    "Topic :: Project",
+    "Topic :: Template",
+]
+
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.11"
+numpy = "1.21"
+pytest = "^6.2.5"
+requests = "^2.26.0"
+pyaml = "^21.8.3"
+pandas = "^1.3.3"
+Unidecode = "^1.3.2"
+python-dotenv = "^0.20.0"
+pydantic = "^1.9.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^5"
+flake8-isort = "^4.0.0"
+flake8-builtins = "^1.5.3"
+flake8-bandit = "^4"
+autopep8 = "^1.5.7"
+pylint = "^2.8.2"
+bandit = "^1.7.0"
+black = "^22"
+autoflake = "^1.3.1"
+pytest-cov = "^2.8.1"
+ipython = "^7.28"
+commitizen = "^2.20.0"
+jupyter = "^1.0.0"
+mypy = "0.982"
+
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+line_length = 120
+
+[build-system]
+requires = ["poetry-core=1.1.13"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+markers = [
+    "functions: mark test for the base functionalities",
+    "core: all about the core",
+    "db: all about the database",
+    "api: all about the api of the system",
+]
+
+[[tool.poetry.source]]
+name = "pypi.org"
+url = "https://pypi.org/simple"
+default = true
