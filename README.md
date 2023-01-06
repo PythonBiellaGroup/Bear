@@ -34,3 +34,18 @@ You can find and extensive documentation created with **mkdocs** to [this github
 This repository is licensed under the MIT license. See LICENSE for details.
 
 If you use this repository in your work, please cite it as or just write to us to say thanks with your feedback and experience :)
+
+## Documentation
+
+Useful links and other documentation website you can check
+
+- [Our website with the documentation](https://pythonbiellagroup.it)
+- [The repository for our documentation](https://github.com/PythonBiellaGroup/doc-website)
+- [Hypermodern python repository](https://github.com/cjolowicz/hypermodern-python)
+- [The hypermodern python official medium article](https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769)
+- [Modern Python repository](https://github.com/rhettinger/modernpython)
+- [Awesome Pyproject](https://github.com/carlosperate/awesome-pyproject/blob/master/README.md)
+- [Python developer roadmap](https://roadmap.sh/python/)
+- [Creating a modern python development environment medium article](https://itnext.io/creating-a-modern-python-development-environment-3d383c944877)
+- [Modern python interesting practices](https://www.stuartellis.name/articles/python-modern-practices/)
+- [4 Keys to write modern python in 2022](https://www.infoworld.com/article/3648061/4-keys-to-writing-modern-python-in-2022.html)
