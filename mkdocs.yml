@@ -1,0 +1,172 @@
+# To launch mkdocs use: mkdocs serve
+# To launch with debug mode use: mkdocs serve -v
+# To build mkdocs use: mkdocs build --clean
+
+# Project information
+site_name: Bear
+site_url: https://github.com/PythonBiellaGroup/Bear
+site_description: PBG Bear template project
+site_author: PBG
+copyright: Made with ♥ by PBG Team
+
+# Repository
+repo_url: https://github.com/PythonBiellaGroup/Bear
+repo_name: PythonBiellaGroup/Bear
+edit_uri: "" #disables edit button
+
+# Configuration
+theme:
+  name: material
+  # Static files
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  language: en
+  features:
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    # - navigation.instant
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - search.share
+    - header.autohide
+    - content.code.annotate
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+  logo: static/images/logo-white.png
+  favicon: static/images/favicon.ico
+  font:
+    text: Ubuntu
+    code: Roboto mono
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+#Plugins
+plugins:
+  - search
+  # - simple:
+  #     include_folders:
+  #       - "*"
+  #     ignore_folders: []
+  #     ignore_hidden: true
+  #     merge_docs_dir: true
+  - autorefs
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+  - mkdocs-jupyter:
+      kernel_name: python3
+      include_source: True
+  # - gallery:
+  # examples_dirs: docs/examples # path to your example scripts
+  # gallery_dirs: docs/generated/gallery # where to save generated gallery
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+            show_root_heading: yes
+            heading_level: 0
+          selection:
+            filters:
+              - "!^_" # exclude all members starting with _
+              - "!^__init__$" # exclude __init__ modules and methods
+      custom_templates: templates
+      # watch:
+      #   - common
+      #   - component_creator
+      #   - cron
+      #   - importer
+      #   - kpi
+      #   - settings
+  # - redirects:
+  # redirect_maps:
+  # changelog/insiders.md: insiders/changelog.md
+  # reference/meta-tags.md: reference/index.md
+  # reference/variables.md: https://mkdocs-macros-plugin.readthedocs.io/
+  # sponsorship.md: insiders/index.md
+  # upgrading.md: upgrade.md
+
+# Markdown extensions
+markdown_extensions:
+  - footnotes
+  - attr_list
+  - def_list
+  - meta
+  - admonition
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.keys
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - pymdownx.tabbed
+  - pymdownx.arithmatex:
+      generic: true
+
+#to use latex equations
+#https://squidfunk.github.io/mkdocs-material/reference/mathjax/
+extra_javascript:
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+#Extra material theme settings
+extra:
+  disqus: PBG
+  generator: false
+  # analytics:
+  #   provider: google
+  #   property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:pythonbiellagroup@gmail.com
+      name: Write to us
+
+    - icon: fontawesome/brands/github
+      link: https://github.com/PythonBiellaGroup/
+
+    - icon: fontawesome/social/user
+      link: https://linktr.ee/PythonBiellaGroup
+      name: All our link and contacts
+
+# Page tree
+nav:
+  - Home:
+      - Startup: index.md
+  - General overview:
+      - Overview: general/index.md
+
+  - List of functionalities:
+      - General: documentation/index.md
+      - Settings: documentation/settings.md
+      - Logger: documentation/logger.md
+  - Reference:
+      - References: reference/index.md
