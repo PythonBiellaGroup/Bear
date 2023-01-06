@@ -17,6 +17,18 @@
       }
     },
     {
+      "name": "Main File",
+      "type": "python",
+      "request": "launch",
+      "program": "app/main.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${cwd}",
+        "VERBOSITY": "DEBUG"
+      }
+    },
+    {
       "name": "Python: Streamlit",
       "type": "python",
       "request": "launch",
@@ -53,18 +65,6 @@
       "env": {
         "PYTHONPATH": "${cwd}",
         "TEST": "debugger"
-      }
-    },
-    {
-      "name": "Main File",
-      "type": "python",
-      "request": "launch",
-      "program": "app/main.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}",
-      "env": {
-        "PYTHONPATH": "${cwd}",
-        "VERBOSITY": "DEBUG"
       }
     }
   ]
