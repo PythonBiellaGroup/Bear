@@ -10,6 +10,8 @@
 
 .DS_Store
 .venv
+.pdm.toml
+.ruff_cache
 
 #We don't want to push the data
 *.csv

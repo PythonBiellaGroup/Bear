@@ -2,5 +2,6 @@
 .venv
 .pytest_cache
 /test
-.ruff_cache
 .env
+.pdm.toml
+.ruff_cache
