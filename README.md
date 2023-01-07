@@ -25,13 +25,50 @@ You can find and extensive documentation created with **mkdocs** to [this github
 
 ## How to use it
 
+You can use this repository as a template to create your own project with **cookiecutter**
+
+Just remember to add **cookiecutter** as a dependency into your local version installation of python using pip (or something else)
+```bash
+pip install cookiecutter
+```
+
+You can use this following command (both on Windows and Posix systems):
+```bash
+cookiecutter gh:PythonBiellaGroup/bear
+```
+
+Or also with the full https path:
+```bash
+cookiecutter https://github.com/PythonBiellaGroup/Bear
+```
+
+once you launch this commands just follow the guide and fill the required fields.
+
 ## How to maintain it
+
+Unfortunately there is no automatic way to update the templates inside cookiecutter yet, you have to do it manually.
+
+1. Clone the repository
+2. Launch the dependency installation using: poetry or pdm
+   1. `poetry install`
+   2. or `pdm install`
+3. Modify something
+4. If you want to test a specific inner template (like the Base template) you can launch: `cookiecutter .` to test cookiecutter project generation 
+   1. After that you can modify the template
+   2. When you finish your modification you have to copy and paste all the modifications manually inside the cookiecutter generation folder
+5. Then remember to open a pull request or push to the repository (in develop firtst) if you have the permissions.
+
+Please remember also to follow a Gitflow workflow and to use the **develop** branch as the main branch for development.
 
 ## How to contribute
 
+You can help us to improve this project by opening issues or doing some pull request if you want to add more functionalities or if you want to fix some bugs.
+
+Please follow the [Contributing guidelines](CONTRIBUTING.md) to contribute to this project.
+
 ## License
 
-This repository is licensed under the MIT license. See LICENSE for details.
+This repository is licensed under the MIT license. See LICENSE file for details.
 
 If you use this repository in your work, please cite it as or just write to us to say thanks with your feedback and experience :)
 
