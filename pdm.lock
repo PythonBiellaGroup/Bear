@@ -252,6 +252,11 @@ dependencies = [
 ]
 
 [[package]]
+name = "csscompressor"
+version = "0.9.5"
+summary = "A python port of YUI CSS Compressor"
+
+[[package]]
 name = "debugpy"
 version = "1.6.5"
 requires_python = ">=3.7"
@@ -385,6 +390,11 @@ dependencies = [
 ]
 
 [[package]]
+name = "htmlmin"
+version = "0.1.12"
+summary = "An HTML Minifier"
+
+[[package]]
 name = "idna"
 version = "3.4"
 requires_python = ">=3.5"
@@ -504,6 +514,11 @@ dependencies = [
     "arrow",
     "jinja2",
 ]
+
+[[package]]
+name = "jsmin"
+version = "3.0.1"
+summary = "JavaScript minifier."
 
 [[package]]
 name = "jsonpointer"
@@ -826,6 +841,18 @@ name = "mkdocs-material-extensions"
 version = "1.1.1"
 requires_python = ">=3.7"
 summary = "Extension pack for Python Markdown and MkDocs Material."
+
+[[package]]
+name = "mkdocs-minify-plugin"
+version = "0.6.2"
+requires_python = ">=3.7"
+summary = "An MkDocs plugin to minify HTML, JS or CSS files prior to being written to disk"
+dependencies = [
+    "csscompressor>=0.9.5",
+    "htmlmin>=0.1.12",
+    "jsmin>=3.0.1",
+    "mkdocs>=1.4.1",
+]
 
 [[package]]
 name = "mkdocs-redirects"
@@ -1521,7 +1548,7 @@ summary = "Backport of pathlib-compatible object wrapper for zip files"
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:0f45fcbace2d01e30ed1804c15437c72c8b88af07fc4fcd0171e2cdbb37d04a6"
+content_hash = "sha256:3fdd7fbe3b1d7e22818cc929c6b10fd7b1b3f3742b5b9ffbe33b2802f2be8621"
 
 [metadata.files]
 "anyio 3.6.2" = [
@@ -1772,6 +1799,9 @@ content_hash = "sha256:0f45fcbace2d01e30ed1804c15437c72c8b88af07fc4fcd0171e2cdbb
     {url = "https://files.pythonhosted.org/packages/fd/b4/066648986b94cef4542c12c6180d66245aa2f48eadbffcbc18bccad5a557/coverage-7.0.3-cp39-cp39-musllinux_1_1_aarch64.whl", hash = "sha256:b791beb17b32ac019a78cfbe6184f992b6273fdca31145b928ad2099435e2fcb"},
     {url = "https://files.pythonhosted.org/packages/fe/56/56abe3d07c63ae2facd1eff1f9cdfa653c7fe6a85bb8edeb716db03fd582/coverage-7.0.3-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:7e8b0642c38b3d3b3c01417643ccc645345b03c32a2e84ef93cdd6844d6fe530"},
 ]
+"csscompressor 0.9.5" = [
+    {url = "https://files.pythonhosted.org/packages/f1/2a/8c3ac3d8bc94e6de8d7ae270bb5bc437b210bb9d6d9e46630c98f4abd20c/csscompressor-0.9.5.tar.gz", hash = "sha256:afa22badbcf3120a4f392e4d22f9fff485c044a1feda4a950ecc5eba9dd31a05"},
+]
 "debugpy 1.6.5" = [
     {url = "https://files.pythonhosted.org/packages/01/d1/ca25645259d56eae64a4b4d330072b5aa8145cfb8cdcae50c1096a0ef826/debugpy-1.6.5-cp39-cp39-win32.whl", hash = "sha256:15bc5febe0edc79726517b1f8d57d7ac7c784567b5ba804aab8b1c9d07a57018"},
     {url = "https://files.pythonhosted.org/packages/09/ae/b1cf75c44fd09570be433e481628fb7cc1c13715b5ce181d93197287ec25/debugpy-1.6.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:947c686e8adb46726f3d5f19854f6aebf66c2edb91225643c7f44b40b064a235"},
@@ -1860,6 +1890,9 @@ content_hash = "sha256:0f45fcbace2d01e30ed1804c15437c72c8b88af07fc4fcd0171e2cdbb
     {url = "https://files.pythonhosted.org/packages/24/e4/f493ae4332b8d896a35ca6cf489c53cec4d42f552d6881e60d80200dbe57/griffe-0.25.3.tar.gz", hash = "sha256:a71f156851649b3f0bdad6eb6bf7d7ac70e720a30da9f2d5a60e042480e92c03"},
     {url = "https://files.pythonhosted.org/packages/4c/e7/456413eddb305a626f9708dae9980556159b62312ef2057e811777d834dc/griffe-0.25.3-py3-none-any.whl", hash = "sha256:c98e8471a4fc7675a7989f45563a9f7ccbfdfb1713725526d69dec1bbdcda74a"},
 ]
+"htmlmin 0.1.12" = [
+    {url = "https://files.pythonhosted.org/packages/b3/e7/fcd59e12169de19f0131ff2812077f964c6b960e7c09804d30a7bf2ab461/htmlmin-0.1.12.tar.gz", hash = "sha256:50c1ef4630374a5d723900096a961cff426dff46b48f34d194a81bbe14eca178"},
+]
 "idna 3.4" = [
     {url = "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"},
     {url = "https://files.pythonhosted.org/packages/fc/34/3030de6f1370931b9dbb4dad48f6ab1015ab1d32447850b9fc94e60097be/idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
@@ -1907,6 +1940,9 @@ content_hash = "sha256:0f45fcbace2d01e30ed1804c15437c72c8b88af07fc4fcd0171e2cdbb
 "jinja2-time 0.2.0" = [
     {url = "https://files.pythonhosted.org/packages/6a/a1/d44fa38306ffa34a7e1af09632b158e13ec89670ce491f8a15af3ebcb4e4/jinja2_time-0.2.0-py2.py3-none-any.whl", hash = "sha256:d3eab6605e3ec8b7a0863df09cc1d23714908fa61aa6986a845c20ba488b4efa"},
     {url = "https://files.pythonhosted.org/packages/de/7c/ee2f2014a2a0616ad3328e58e7dac879251babdb4cb796d770b5d32c469f/jinja2-time-0.2.0.tar.gz", hash = "sha256:d14eaa4d315e7688daa4969f616f226614350c48730bfa1692d2caebd8c90d40"},
+]
+"jsmin 3.0.1" = [
+    {url = "https://files.pythonhosted.org/packages/5e/73/e01e4c5e11ad0494f4407a3f623ad4d87714909f50b17a06ed121034ff6e/jsmin-3.0.1.tar.gz", hash = "sha256:c0959a121ef94542e807a674142606f7e90214a2b3d1eb17300244bbb5cc2bfc"},
 ]
 "jsonpointer 2.3" = [
     {url = "https://files.pythonhosted.org/packages/a0/6c/c52556b957a0f904e7c45585444feef206fe5cb1ff656303a1d6d922a53b/jsonpointer-2.3.tar.gz", hash = "sha256:97cba51526c829282218feb99dab1b1e6bdf8efd1c43dc9d57be093c0d69c99a"},
@@ -2174,6 +2210,10 @@ content_hash = "sha256:0f45fcbace2d01e30ed1804c15437c72c8b88af07fc4fcd0171e2cdbb
 "mkdocs-material-extensions 1.1.1" = [
     {url = "https://files.pythonhosted.org/packages/cd/3f/e5e3c9bfbb42e4cb661f71bcec787ae6bdf4a161b8c4bb68fd7d991c436c/mkdocs_material_extensions-1.1.1.tar.gz", hash = "sha256:9c003da71e2cc2493d910237448c672e00cefc800d3d6ae93d2fc69979e3bd93"},
     {url = "https://files.pythonhosted.org/packages/fd/c9/35af8ceabace3e33d1fb64b1749c6f4dac6129faa32f8a4229791f89f56a/mkdocs_material_extensions-1.1.1-py3-none-any.whl", hash = "sha256:e41d9f38e4798b6617ad98ca8f7f1157b1e4385ac1459ca1e4ea219b556df945"},
+]
+"mkdocs-minify-plugin 0.6.2" = [
+    {url = "https://files.pythonhosted.org/packages/2a/ca/1a8c11ebee63bd478d31b146663dc90bc2a8662b294be344221a9cfd889b/mkdocs_minify_plugin-0.6.2-py3-none-any.whl", hash = "sha256:b9f43751f515372b766f1e9e77422fd1c9acfaf8c2bf018ff461fd97476e05e3"},
+    {url = "https://files.pythonhosted.org/packages/dc/7d/ff775e363ddd3c14fc530f5ec5cfb036a1d168020c93dd410fca842cfb90/mkdocs-minify-plugin-0.6.2.tar.gz", hash = "sha256:679f6e430bf49845649d0a1f183e36be3a0da5fdc60fee5fdab4356db0a18e2c"},
 ]
 "mkdocs-redirects 1.2.0" = [
     {url = "https://files.pythonhosted.org/packages/48/7c/ee2b4f6d632c6b93bd6fc49aadfffea75904cf56cb27e0008a0a57a4fddf/mkdocs-redirects-1.2.0.tar.gz", hash = "sha256:ddd38267d49fdfa19fb2f25b4aed2fb53f0496c818bf3018009c8eaf6676a327"},

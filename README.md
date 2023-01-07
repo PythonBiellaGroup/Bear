@@ -60,6 +60,10 @@ Unfortunately there is no automatic way to update the templates inside cookiecut
 
 Please remember also to follow a Gitflow workflow and to use the **develop** branch as the main branch for development.
 
+### Documentation
+
+To build and maintain the documentatio
+
 ## How to contribute
 
 You can help us to improve this project by opening issues or doing some pull request if you want to add more functionalities or if you want to fix some bugs.

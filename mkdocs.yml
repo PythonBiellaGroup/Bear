@@ -41,8 +41,8 @@ theme:
     - navigation.indexes
     - navigation.sections
     - navigation.tabs
-  logo: static/images/logo-white.png
-  favicon: static/images/favicon.ico
+  logo: static/logo-no-background.png
+  favicon: static/favicon.ico
   font:
     text: Ubuntu
     code: Roboto mono
@@ -153,7 +153,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/PythonBiellaGroup/
 
-    - icon: fontawesome/social/user
+    - icon: fontawesome/solid/user
       link: https://linktr.ee/PythonBiellaGroup
       name: All our link and contacts
 
