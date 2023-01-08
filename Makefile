@@ -75,7 +75,7 @@ docs: ## Build and serve the documentation
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-#### Remove anwanted python stuff
+#### Project clean
 .PHONY: project_clean
 clean:
 	rm -rf **/.ipynb_checkpoints **/.pytest_cache **/__pycache__ **/**/__pycache__ ./notabooks/ipynb_checkpoints .pytest_cache ./dist ./volumes
@@ -83,34 +83,5 @@ clean:
 .PHONY: project_restore
 restore:
 	rm -rf **/.ipynb_checkpoints **/.pytest_cache **/__pycache__ **/**/__pycache__ ./notabooks/ipynb_checkpoints .pytest_cache ./dist .venv poetry.lock
-
-### Project specific tasks
-.PHONY: project
-launch_py3:
-	python3 app/main.py
-
-.PHONY: project
-launch_py:
-	python app/main.py
-
-#### Docker
-.PHONY: docker
-# remember to change: template in the -p flag
-# remember to be connected to the vpn
-docker_launch:
-	docker-compose -p template up --build -d
-
-docker_build:
-	docker-compose -p template build
-
-docker_launch_prod:
-	./lauch.sh
-
-docker_check:
-	docker ps -a | grep "template"
-
-docker_stop:
-	docker-compose down
-	# docker-compose down -v
 
 .DEFAULT_GOAL := help

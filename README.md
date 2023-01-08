@@ -90,3 +90,5 @@ Useful links and other documentation website you can check
 - [Creating a modern python development environment medium article](https://itnext.io/creating-a-modern-python-development-environment-3d383c944877)
 - [Modern python interesting practices](https://www.stuartellis.name/articles/python-modern-practices/)
 - [4 Keys to write modern python in 2022](https://www.infoworld.com/article/3648061/4-keys-to-writing-modern-python-in-2022.html)
+- [cookiecutter-poetry good implementation](https://github.com/fpgmaas/cookiecutter-poetry)
+- 

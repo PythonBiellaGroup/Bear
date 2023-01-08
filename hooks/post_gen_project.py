@@ -1,7 +1,7 @@
 import os
 import shutil
-from distutils.dir_util import copy_tree
 from cookiecutter.main import cookiecutter
+# from distutils.dir_util import copy_tree
 
 
 def replace_contents(filename: str, what: str, replacement: str) -> None:

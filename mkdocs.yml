@@ -161,12 +161,11 @@ extra:
 nav:
   - Home:
       - Startup: index.md
-  - General overview:
-      - Overview: general/index.md
-
-  - List of functionalities:
-      - General: documentation/index.md
-      - Settings: documentation/settings.md
-      - Logger: documentation/logger.md
+  # - General overview:
+  #     - Overview: general/index.md
+  # - List of functionalities:
+  #     - General: documentation/index.md
+  #     - Settings: documentation/settings.md
+  #     - Logger: documentation/logger.md
   - Reference:
       - References: reference/index.md
