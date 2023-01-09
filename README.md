@@ -20,6 +20,7 @@ We suggest to use **VSCode** as IDE for this project since you can find a lot of
 - testing
 - settings
 - extensions
+- test
 
 You can find and extensive documentation created with **mkdocs** to [this github page link](https://pythonbiellagroup.github.io/bear/)
 
