@@ -1,7 +1,7 @@
 import os
 import shutil
+from distutils.dir_util import copy_tree
 from cookiecutter.main import cookiecutter
-# from distutils.dir_util import copy_tree
 
 
 def replace_contents(filename: str, what: str, replacement: str) -> None:
@@ -24,9 +24,10 @@ def replace_contents(filename: str, what: str, replacement: str) -> None:
 
 map_choice_dir = {
     "Base": "base",
+    "Package": "package",
 }
 
-project_type = "{{ cookiecutter.project_type }}"
+project_type = "{{cookiecutter.project_type}}"
 
 # Generate __tmp directory
 files_before = os.listdir(".")

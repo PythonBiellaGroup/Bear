@@ -1,11 +1,10 @@
 {
     "project_type": [
-        "Base"
+        "Base",
+        "Package"
     ],
     "_copy_without_render": [
         "__cc_*",
-        "google_no_types.mustache",
-        "test_create.py",
         "post_gen_project.py",
         "pre_gen_project.py"
     ]

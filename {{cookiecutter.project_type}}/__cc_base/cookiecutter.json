@@ -1,7 +1,7 @@
 {
-    "project": "name-of-the-project",
-    "project_description": "Short description of the project",
-    "author": "PBG",
+    "project": "python-skeleton",
+    "project_description": "Short description of the project and the package",
+    "author": "Andrea Guzzo",
     "directory_name": "{{cookiecutter.project.lower().strip().replace(' ','-')}}",
     "open_source_license": [
         "Not open source",

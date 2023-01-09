@@ -1,0 +1,16 @@
+{
+    "project": "My project",
+    "author": "JeyDi",
+    "pkg_name": "{{ cookiecutter.project|lower|replace(' ', '_') }}",
+    "directory_name": "{{ cookiecutter.pkg_name|replace('_','-') }}",
+    "open_source_license": [
+        "Not open source",
+        "MIT",
+        "LGPL3",
+        "GPL3",
+        "APACHE2"
+    ],
+    "_copy_without_render": [
+        ".vscode/*"
+    ]
+}
