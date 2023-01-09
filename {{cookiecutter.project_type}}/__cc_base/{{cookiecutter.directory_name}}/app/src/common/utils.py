@@ -5,12 +5,12 @@ import os
 import re
 from datetime import datetime
 from typing import Any, Optional, Union
+from loguru import logger
 
 import numpy as np
 import pandas as pd
 import unidecode
 import yaml
-from loguru import logger
 
 
 def profiling_api(

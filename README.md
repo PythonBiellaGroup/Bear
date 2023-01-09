@@ -62,7 +62,17 @@ Please remember also to follow a Gitflow workflow and to use the **develop** bra
 
 ### Documentation
 
-To build and maintain the documentatio
+We use **mkdocs** to create the documentation for this project.
+
+To launch the documentation locally:(remember to install the python env with poetry or pdm before):
+```bash
+mkdocs serve
+```
+
+If you want to prepare the build artifacts for the **gitlab pages** documentation, you have to run:
+```bash
+mkdocs build
+```
 
 ## How to contribute
 
