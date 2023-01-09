@@ -1,14 +1,15 @@
-import os
-import yaml
-import re
-import json
-import importlib
-import unidecode
 import datetime as dt
+import importlib
+import json
+import os
+import re
 from datetime import datetime
+from typing import Any, Optional, Union
+
 import numpy as np
 import pandas as pd
-from typing import Union, Any, Optional
+import unidecode
+import yaml
 from loguru import logger
 
 
@@ -494,7 +495,6 @@ def read_yaml(file_path: str, filename: str = "") -> dict:
 
     try:
         with open(file_path) as file:
-
             data = yaml.safe_load(file)
             file.close()
         logger.debug(f"Yaml file: {filename} loaded")

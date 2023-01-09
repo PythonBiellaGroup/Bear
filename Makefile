@@ -7,7 +7,7 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 	@cookiecutter . --overwrite-if-exists
 
 .PHONY: bake-and-test-deploy
-bake-test: 
+bake-test:
 	@rm -rf testone || true
 	@cookiecutter --no-input . --overwrite-if-exists \
 		project="Testone" \

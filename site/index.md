@@ -53,7 +53,7 @@ Unfortunately there is no automatic way to update the templates inside cookiecut
    1. `poetry install`
    2. or `pdm install`
 3. Modify something
-4. If you want to test a specific inner template (like the Base template) you can launch: `cookiecutter .` to test cookiecutter project generation 
+4. If you want to test a specific inner template (like the Base template) you can launch: `cookiecutter .` to test cookiecutter project generation
    1. After that you can modify the template
    2. When you finish your modification you have to copy and paste all the modifications manually inside the cookiecutter generation folder
 5. Then remember to open a pull request or push to the repository (in develop firtst) if you have the permissions.

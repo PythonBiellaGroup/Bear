@@ -1,6 +1,7 @@
 from loguru import logger
+
 from app.src.config import settings
-from app.src.core.manager import logic_test, convert_numbers
+from app.src.core.manager import convert_numbers, logic_test
 
 if __name__ == "__main__":
     logger.info(f"Welcome to: {settings.APP_NAME}")

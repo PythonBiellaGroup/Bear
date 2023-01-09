@@ -1,6 +1,5 @@
 import os
 import shutil
-from distutils.dir_util import copy_tree
 from cookiecutter.main import cookiecutter
 
 

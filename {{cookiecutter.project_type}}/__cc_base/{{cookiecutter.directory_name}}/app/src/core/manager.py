@@ -1,6 +1,7 @@
 from typing import List
-from app.src.logger import logger
+
 from app.src.config import settings
+from app.src.logger import logger
 
 
 def logic_test(message: str = None) -> str:

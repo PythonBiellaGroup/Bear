@@ -53,7 +53,7 @@ Unfortunately there is no automatic way to update the templates inside cookiecut
    1. `poetry install`
    2. or `pdm install`
 3. Modify something
-4. If you want to test a specific inner template (like the Base template) you can launch: `cookiecutter .` to test cookiecutter project generation 
+4. If you want to test a specific inner template (like the Base template) you can launch: `cookiecutter .` to test cookiecutter project generation
    1. After that you can modify the template
    2. When you finish your modification you have to copy and paste all the modifications manually inside the cookiecutter generation folder
 5. Then remember to open a pull request or push to the repository (in develop firtst) if you have the permissions.
@@ -91,4 +91,4 @@ Useful links and other documentation website you can check
 - [Modern python interesting practices](https://www.stuartellis.name/articles/python-modern-practices/)
 - [4 Keys to write modern python in 2022](https://www.infoworld.com/article/3648061/4-keys-to-writing-modern-python-in-2022.html)
 - [cookiecutter-poetry good implementation](https://github.com/fpgmaas/cookiecutter-poetry)
-- 
+- [dev container video tutorial](https://www.youtube.com/watch?v=0H2miBK_gAk)

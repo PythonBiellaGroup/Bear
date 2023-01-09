@@ -429,7 +429,7 @@ docs/_build/
 .pybuilder/
 target/
 
-# Poetry 
+# Poetry
 #poetry.lock
 
 

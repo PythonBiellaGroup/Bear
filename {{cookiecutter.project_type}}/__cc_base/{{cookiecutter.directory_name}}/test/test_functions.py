@@ -1,12 +1,13 @@
 from typing import List
-from loguru import logger
-from app.src.core.manager import logic_test, convert_numbers
+
 import pytest
+from loguru import logger
+
+from app.src.core.manager import convert_numbers, logic_test
 
 
 @pytest.mark.functions
 def test_logic_base():
-
     logger.debug("test logic base con messaggio")
     message = "Ciao JeyDi!"
     message = logic_test(message)
@@ -15,7 +16,6 @@ def test_logic_base():
 
 @pytest.mark.core
 def test_entities():
-
     logger.debug("test entities base con lista di numeri")
     numbers = [1, 2, 3, 4, 5]
     result = convert_numbers(numbers)

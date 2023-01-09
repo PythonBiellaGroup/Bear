@@ -1,22 +1,9 @@
-.PHONY: bake
-bake: ## bake without inputs and overwrite if exists.
-	@cookiecutter --no-input . --overwrite-if-exists
-
-.PHONY: bake-with-inputs
-bake-with-inputs: ## bake with inputs and overwrite if exists.
-	@cookiecutter . --overwrite-if-exists
-
-.PHONY: bake-and-test-deploy
-bake-test: 
-	@rm -rf testone || true
-	@cookiecutter --no-input . --overwrite-if-exists \
-		project="Testone" \
-		project_description="Test project" \
-		author="Test Author" \
-		directory_name="testone" \
-		open_source_license="2"
-
 .PHONY: install
+install: ## Install the environment using poetry as default
+	@echo "🚀 Creating virtual environment using pyenv and poetry"
+	@poetry install
+	@poetry shell
+
 install-poetry: ## Install the poetry environment
 	@echo "🚀 Creating virtual environment using pyenv and poetry"
 	@poetry install
@@ -29,6 +16,8 @@ install-pdm: ## Install the poetry environment
 
 .PHONY: check
 check: ## Run code quality tools.
+	@echo "🚀 Configure pre-commit hooks"
+	@pre-commit install
 	@echo "🚀 Checking Poetry lock file consistency with 'pyproject.toml': Running poetry lock --check"
 	@poetry lock --check
 	@echo "🚀 Linting code: Running pre-commit"

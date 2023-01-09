@@ -1,13 +1,10 @@
 import os
-
 from functools import lru_cache
-from dotenv import dotenv_values
 from pathlib import Path
-from pydantic import BaseSettings, root_validator
 from typing import Any, Dict
 
-
-from app.src.common.utils import read_yaml
+from dotenv import dotenv_values
+from pydantic import BaseSettings, root_validator
 from loguru import logger
 
 
@@ -23,7 +20,7 @@ class Settings(BaseSettings):
     # if you want to test gunicorn the below environment variabile must be False
     DEBUG_MODE: str = "True"
     VERBOSITY: str = "DEBUG"
-    
+
     # Logger
     LOG_VERBOSITY: str = "INFO"
     LOG_ROTATION_SIZE: str = "100MB"
