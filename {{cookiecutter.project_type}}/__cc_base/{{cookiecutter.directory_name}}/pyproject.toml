@@ -38,6 +38,7 @@ dependencies = [
     "mkdocs-minify-plugin>=0.6.2",
     "pandas>=1.5.2",
     "numpy>=1.24.1",
+    "loguru>=0.6.0",
 ]
 requires-python = ">=3.9.8,<3.11.1"
 license = {text = "{{cookiecutter.open_source_license}}"}
@@ -52,7 +53,6 @@ classifiers = [
 homepage = ""
 repository = ""
 documentation = ""
-
 
 [[tool.poetry.source]]
 name = "pypi.org"
@@ -79,6 +79,7 @@ types-requests="^2.28.11.7"
 types-PyYAML="^6.0.12.2"
 mkdocs-minify-plugin="^0.6.2"
 detect-secrets="^1.4.0"
+loguru = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^6.0.0"
@@ -197,7 +198,6 @@ style = [
     ["text", ""],
     ["disabled", "fg:#858585 italic"]
 ]
-
 
 [tool.ruff]
 line-length = 120
