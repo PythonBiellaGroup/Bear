@@ -92,3 +92,5 @@ Useful links and other documentation website you can check
 - [4 Keys to write modern python in 2022](https://www.infoworld.com/article/3648061/4-keys-to-writing-modern-python-in-2022.html)
 - [cookiecutter-poetry good implementation](https://github.com/fpgmaas/cookiecutter-poetry)
 - [dev container video tutorial](https://www.youtube.com/watch?v=0H2miBK_gAk)
+- [Ruff official documentation](https://github.com/charliermarsh/ruff/blob/main/README.md)
+- [Ruff vscode extension](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)

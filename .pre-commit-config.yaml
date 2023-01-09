@@ -24,6 +24,15 @@ repos:
   #     - id: check-yaml
   #     - id: end-of-file-fixer
   #     - id: trailing-whitespace
+
+  # - repo: https://github.com/charliermarsh/ruff-pre-commit
+  #   # Ruff version.
+  #   rev: 'v0.0.216'
+  #   hooks:
+  #     - id: ruff
+  #       # Respect `exclude` and `extend-exclude` settings.
+  #       args: ["--force-exclude"]
+
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.4.0
     hooks:
@@ -47,6 +56,11 @@ repos:
       - id: flake8
         name: flake8
         entry: poetry run flake8 .
+        language: system
+        types: [python]
+      - id: ruff
+        name: ruff
+        entry: poetry run ruff --fix --no-cache --force-exclude .
         language: system
         types: [python]
       # - id: detect-secrets
