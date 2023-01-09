@@ -45,6 +45,7 @@
     "gruntfuggly.todo-tree",
     "visualstudioexptteam.vscodeintellicode",
     "webhint.vscode-webhint",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "charliermarsh.ruff"
   ]
 }
