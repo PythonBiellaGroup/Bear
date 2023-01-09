@@ -208,7 +208,7 @@ ignore = ["E501"]
 # Always autofix, but never try to fix `F401` (unused imports).
 fix = true
 unfixable = ["F401"]
-# # Exclude a variety of commonly ignored directories.
+# # Exclude a variety of commonly ignored directories (you can have some problems)
 # exclude = [
 #     ".direnv",
 #     ".eggs",

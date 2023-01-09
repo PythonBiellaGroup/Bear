@@ -2,7 +2,7 @@ version: '3.8'
 services:
   admin_app_dev:
     build:
-      dockerfile: ./Dockerfiles/dev.dockerfile
+      dockerfile: ./Docker/dev.dockerfile
       context: ../
     restart: always
     environment:
