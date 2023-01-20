@@ -7,7 +7,7 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 	@cookiecutter . --overwrite-if-exists
 
 .PHONY: bake-and-test-deploy
-bake-test:
+bake-test: ## bake with test inputs.
 	@rm -rf testone || true
 	@cookiecutter --no-input . --overwrite-if-exists \
 		project="Testone" \
@@ -72,16 +72,16 @@ docs: ## Build and serve the documentation
 	@mkdocs serve
 
 .PHONY: help
-help:
+help: ## Ask for help in the Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 #### Project clean
 .PHONY: project_clean
-clean:
-	rm -rf **/.ipynb_checkpoints **/.pytest_cache **/__pycache__ **/**/__pycache__ ./notabooks/ipynb_checkpoints .pytest_cache ./dist ./volumes
+clean: ## Clean the projects of unwanted cached folders
+	rm -rf **/.ipynb_checkpoints **/.pytest_cache **/__pycache__ **/**/__pycache__ ./notebooks/ipynb_checkpoints .pytest_cache ./dist ./volumes
 
 .PHONY: project_restore
-restore:
+restore: ## Restore the projects to the start (hard clean)
 	rm -rf **/.ipynb_checkpoints **/.pytest_cache **/__pycache__ **/**/__pycache__ ./notabooks/ipynb_checkpoints .pytest_cache ./dist .venv poetry.lock
 
 .DEFAULT_GOAL := help
