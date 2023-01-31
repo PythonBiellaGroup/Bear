@@ -248,6 +248,8 @@ ignore = ["BLE001", "D203", "D213", "D417", "E501"]
 # Always autofix, but never try to fix `F401` (unused imports).
 fix     = true
 unfixable = ["F401"]
+# Assume Python 3.9.
+target-version = "py39"
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 # # Exclude a variety of commonly ignored directories (you can have some problems)
