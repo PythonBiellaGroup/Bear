@@ -13,6 +13,9 @@
     "_copy_without_render": [
         ".vscode/*",
         "post_gen_project.py",
-        "pre_gen_project.py"
+        "pre_gen_project.py",
+        ".github/*",
+        ".gitlab/*",
+        "docs/*"
     ]
 }
