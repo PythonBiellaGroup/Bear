@@ -13,7 +13,7 @@
       "cwd": "${workspaceFolder}",
       "env": {
         "PYTHONPATH": "${cwd}",
-        "VERBOSITY": "DEBUG"
+        "LOG_VERBOSITY": "DEBUG"
       }
     },
     {
@@ -25,46 +25,7 @@
       "cwd": "${workspaceFolder}",
       "env": {
         "PYTHONPATH": "${cwd}",
-        "VERBOSITY": "DEBUG"
-      }
-    },
-    {
-      "name": "Python: Streamlit",
-      "type": "python",
-      "request": "launch",
-      "module": "streamlit",
-      "args": ["run", "${workspaceFolder}/app/main.py"],
-      "cwd": "${workspaceFolder}",
-      "env": {
-        "PYTHONPATH": "${cwd}"
-      }
-    },
-    {
-      "name": "Flask Backend",
-      "type": "python",
-      "request": "launch",
-      "port": 8000,
-      "host": "localhost",
-      "program": "${workspaceFolder}/core/app.py",
-      "console": "integratedTerminal",
-      "env": {
-        "API_ENDPOINT_PORT": "5000",
-        "VERBOSITY": "DEBUG",
-        "PYTHONPATH": "${cwd}",
-        "DEBUG_MODE": "True"
-      }
-    },
-    {
-      "name": "FastAPI",
-      "type": "python",
-      "request": "launch",
-      "module": "uvicorn",
-      "cwd": "${workspaceFolder}",
-      "args": ["app.main:app", "--reload", "--port", "8044"],
-      "jinja": true,
-      "env": {
-        "PYTHONPATH": "${cwd}",
-        "TEST": "debugger"
+        "LOG_VERBOSITY": "DEBUG"
       }
     }
   ]
