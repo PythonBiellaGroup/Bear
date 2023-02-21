@@ -1,10 +1,17 @@
 {
-    "project_type": [
-        "Base",
-        "Package"
+    "project": "python-skeleton",
+    "project_description": "Short description of the project and the package",
+    "author": "Andrea Guzzo",
+    "directory_name": "{{cookiecutter.project.lower().strip().replace(' ','-')}}",
+    "open_source_license": [
+        "Not open source",
+        "MIT",
+        "LGPL3",
+        "GPL3",
+        "APACHE2"
     ],
     "_copy_without_render": [
-        "__cc_*",
+        ".vscode/*",
         "post_gen_project.py",
         "pre_gen_project.py"
     ]

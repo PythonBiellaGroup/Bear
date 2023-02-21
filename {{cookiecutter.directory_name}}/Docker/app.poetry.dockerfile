@@ -56,8 +56,11 @@ WORKDIR /app
 #Copy all the project files
 COPY pyproject.toml .
 COPY poetry.lock .
+COPY poetry.toml .
 
-RUN poetry install
+RUN poetry install --no-interaction --no-ansi --only main && \
+    rm -rf /root/.cache/pypoetry
+RUN poetry cache clear --all pypi
 
 COPY /app ./app
 COPY .env .

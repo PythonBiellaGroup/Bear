@@ -1,22 +1,3 @@
-####----Cookiecutter commands----####
-.PHONY: bake
-bake: ## bake without inputs and overwrite if exists.
-	@cookiecutter --no-input . --overwrite-if-exists
-
-.PHONY: bake-with-inputs
-bake-with-inputs: ## bake with inputs and overwrite if exists.
-	@cookiecutter . --overwrite-if-exists
-
-.PHONY: bake-and-test-deploy
-bake-test: ## bake with test inputs.
-	@rm -rf testone || true
-	@cookiecutter --no-input . --overwrite-if-exists \
-		project="Testone" \
-		project_description="Test project" \
-		author="Test Author" \
-		directory_name="testone" \
-		open_source_license="2"
-
 ####----Basic configurations----####
 .PHONY: pre-commit
 install_pre_commit: ## configure and install pre commit tool

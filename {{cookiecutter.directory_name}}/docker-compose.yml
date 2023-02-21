@@ -11,9 +11,11 @@ services:
     restart: always
     environment:
       DEBUG_MODE: ${APP_DEBUG_MODE}
-      VERBOSITY: ${APP_VERBOSITY}
+      LOG_VERBOSITY: ${LOG_VERBOSITY}
     depends_on:
       - db
+    volumes:
+      - ${ECS_LOG_PATH:-/data/logs/project}:/project/logs
     ports:
       - "${APP_DOCKER_PORT:-8045}:${APP_ENDPOINT_PORT:-8000}"
 
