@@ -13,7 +13,7 @@ It's based on **Modern Python Tools** such as:
 - black: for code formatting
 - bandit: for security checks
 - pre-commit: for pre-commit hooks
-- pdm: for linting
+- ruff: for linting
 
 We suggest to use **VSCode** as IDE for this project since you can find a lot of prepared configurations for:
 - debugging
