@@ -12,10 +12,20 @@
     ],
     "_copy_without_render": [
         ".vscode/*",
+        "__cc_*",
+        "google_no_types.mustache",
+        "test_create.py",
         "post_gen_project.py",
         "pre_gen_project.py",
+        ".pre-commit-config.yaml",
+        "codecov.yaml",
         ".github/*",
         ".gitlab/*",
-        "docs/*"
+        "docs/*",
+        "Makefile",
+        "mypy.ini",
+        ".flake8",
+        ".env",
+        "create_examples.sh"
     ]
 }

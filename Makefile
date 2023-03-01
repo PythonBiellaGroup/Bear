@@ -1,11 +1,15 @@
 ####----Cookiecutter commands----####
-.PHONY: bake
+.PHONY: cookiecutter
 bake: ## bake without inputs and overwrite if exists.
 	@cookiecutter --no-input . --overwrite-if-exists
 
-.PHONY: bake-with-inputs
-bake-with-inputs: ## bake with inputs and overwrite if exists.
-	@cookiecutter . --overwrite-if-exists
+bake-clear: ## remove a previous cookiecutter bake
+	@rm -rf testone || true
+
+bake-test: ## bake the base project to test
+	@rm -rf testone || true
+	@poetry run cookiecutter --no-input . --overwrite-if-exists --config-file config.yaml
+	@code testone
 
 .PHONY: bake-and-test-deploy
 bake-test: ## bake with test inputs.
