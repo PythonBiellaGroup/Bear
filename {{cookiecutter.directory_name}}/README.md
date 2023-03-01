@@ -206,4 +206,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [FastApi-url]: https://fastapi.tiangolo.com
 
 
-This readme is based on https://github.com/airaghidavide/Best-README-Template
+This readme is based on https://github.com/othneildrew/Best-README-Template
