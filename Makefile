@@ -5,21 +5,12 @@ bake: ## bake without inputs and overwrite if exists.
 
 bake-clear: ## remove a previous cookiecutter bake
 	@rm -rf testone || true
+	@rm -rf python-skeleton || true
 
 bake-test: ## bake the base project to test
 	@rm -rf testone || true
 	@poetry run cookiecutter --no-input . --overwrite-if-exists --config-file config.yaml
 	@code testone
-
-.PHONY: bake-and-test-deploy
-bake-test: ## bake with test inputs.
-	@rm -rf testone || true
-	@cookiecutter --no-input . --overwrite-if-exists \
-		project="Testone" \
-		project_description="Test project" \
-		author="Test Author" \
-		directory_name="testone" \
-		open_source_license="2"
 
 ####----Basic configurations----####
 .PHONY: pre-commit

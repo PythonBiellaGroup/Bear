@@ -2,9 +2,9 @@
 default_context:
   project: testone
   project_description: "local test for tempy"
-  author: "MDPI AI"
+  author: "PBG"
   directory_name: testone
-  open_source_license: "Not open source"
+  open_source_license: "MIT"
 replay_dir: "./replay"
 abbreviations:
   pp: https://github.com/PythonBiellaGroup/Bear
