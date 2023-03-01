@@ -19,10 +19,4 @@
   "files.exclude": {
     "**/__pycache__": true
   },
-  "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#ff4081",
-    "activityBar.background": "#4F1D22",
-    "titleBar.activeBackground": "#6F2830",
-    "titleBar.activeForeground": "#FEFBFC"
-  }
 }
