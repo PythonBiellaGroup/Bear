@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster as python
+FROM --platform=linux/amd64 python:3.9-slim-buster as python
 
 # Metadata
 LABEL name="PBG Bear"
