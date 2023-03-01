@@ -1,4 +1,4 @@
-FROM postgres:14.1
+FROM --platform=linux/amd64 postgres:14.1
 
 RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y libpq-dev gcc curl
 
