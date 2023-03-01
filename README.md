@@ -25,19 +25,19 @@ You can find and extensive documentation created with **mkdocs** to [this github
 
 ## Next step
 
-1. Fix cookiecutter for windows powershell usage
+1. ~~Fix cookiecutter for windows powershell usage~~
 2. Add mkdocs implementation on Base package with an example with python code
-3. Fix pre-commit
+3. ~~Fix pre-commit~~
 4. Publish mkdocs documentation page on gitlab pages
 5. Add better implementation of detect-secrets
 6. Better README documentation and CONTRIBUTING documentation
-7. Fix the docker with poetry
+7. ~~Fix the docker with poetry~~
 8. Fix the devcontainer
-9. Add a docker container with PDM installation
+9. ~~Add a docker container with PDM installation~~
 10. Add sphynx implementation with cookiecutter rule to choose between mkdocs and sphynx
 11. Add gitlab pipeline example
 12. Add github pipeline example
-13. Add package build
+13. ~~Add package build~~
 
 
 ## How to use it
