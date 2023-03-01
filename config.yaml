@@ -1,0 +1,10 @@
+# Cookiecutter config for tests
+default_context:
+  project: testone
+  project_description: "local test for tempy"
+  author: "PBG"
+  directory_name: testone
+  open_source_license: "MIT"
+replay_dir: "./replay"
+abbreviations:
+  pp: https://github.com/PythonBiellaGroup/Bear

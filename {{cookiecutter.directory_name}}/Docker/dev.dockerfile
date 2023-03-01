@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster as python
+FROM --platform=linux/amd64 python:3.9-slim-buster as python
 
 # Metadata
 LABEL name="PBG Bear"
@@ -6,7 +6,9 @@ LABEL maintainer="PBG"
 LABEL version="0.1"
 
 ARG YOUR_ENV="virtualenv"
-ARG POETRY_VERSION="1.3"
+ARG POETRY_VERSION=1.3.2
+
+ARG DEBIAN_FRONTEND=noninteractive
 
 ENV YOUR_ENV=${YOUR_ENV} \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -48,17 +50,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y \
 # ENV LD_LIBRARY_PATH /lib-override
 
 RUN  wget -O install-poetry.py https://install.python-poetry.org/ \
-    && python install-poetry.py --version ${POETRY_VERSION}
+    && python3 install-poetry.py --version ${POETRY_VERSION}
 
 # Install Node
 #RUN apt-get update && apt-get install -y curl && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs
 
-
 # Copy ssh keys from local machine to dev container
 #RUN ssh-add $HOME/.ssh/keyname
 
-##########################
-# Project Python definition
 WORKDIR /workspace
 
 #Copy all the project files
@@ -66,5 +65,3 @@ COPY . .
 
 # Install libraries
 RUN poetry install
-
-#Launch the main (if required)

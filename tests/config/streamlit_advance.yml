@@ -1,7 +1,0 @@
-default_context:
-    author: "Audrey Roy"
-cookiecutters_dir: "tests/example_output/"
-abbreviations:
-    pp: https://github.com/audreyr/cookiecutter-pypackage.git
-    gh: https://github.com/{0}.git
-    bb: https://bitbucket.org/{0}

@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster as python
+FROM --platform=linux/amd64 python:3.9-slim-buster as python
 
 # Metadata
 LABEL name="PBG Bear"
@@ -6,7 +6,7 @@ LABEL maintainer="PBG"
 LABEL version="0.1"
 
 ARG YOUR_ENV="virtualenv"
-ARG POETRY_VERSION="1.3.1"
+ARG POETRY_VERSION="1.3.2"
 
 ENV YOUR_ENV=${YOUR_ENV} \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -56,8 +56,11 @@ WORKDIR /app
 #Copy all the project files
 COPY pyproject.toml .
 COPY poetry.lock .
+COPY poetry.toml .
 
-RUN poetry install
+RUN poetry install --no-interaction --no-ansi --only main && \
+    rm -rf /root/.cache/pypoetry
+RUN poetry cache clear --all pypi
 
 COPY /app ./app
 COPY .env .

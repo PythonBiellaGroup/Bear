@@ -1,17 +1,3 @@
-####----Cookiecutter commands----####
-.PHONY: cookiecutter
-bake: ## bake without inputs and overwrite if exists.
-	@cookiecutter --no-input . --overwrite-if-exists
-
-bake-clear: ## remove a previous cookiecutter bake
-	@rm -rf testone || true
-	@rm -rf python-skeleton || true
-
-bake-test: ## bake the base project to test
-	@rm -rf testone || true
-	@poetry run cookiecutter --no-input . --overwrite-if-exists --config-file config.yaml
-	@code testone
-
 ####----Basic configurations----####
 .PHONY: pre-commit
 install_pre_commit: ## configure and install pre commit tool

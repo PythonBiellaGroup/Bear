@@ -1,4 +1,7 @@
 import os
+import logging
+import logging.handlers
+import ecs_logging
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict
@@ -27,8 +30,10 @@ class Settings(BaseSettings):
     LOG_RETENTION: str = "30 days"
     LOG_FILE_NAME: str = "./logs/jf_{time:D-M-YY}.log"
     LOG_FORMAT: str = "{time:HH:mm:ss!UTC}\t|\t{file}:{module}:{line}\t|\t{message}"
+    ECS_LOG_PATH: str = f"./logs/elastic-{os.getpid()}.log"
 
     def _setup_logger(self):
+        # logger.remove()  # to remove default logging to StdErr
         logger.add(
             self.LOG_FILE_NAME,
             rotation=self.LOG_ROTATION_SIZE,
@@ -42,6 +47,37 @@ class Settings(BaseSettings):
             diagnose=False,
             encoding="utf8",
         )
+    
+        # Proxy loguru logs also to logging logger.
+        # The ecs logging formats all logs from the python logging system for elastic.
+        # It could be configured to read logs directly from loguru, but in that case it
+        # would miss all parts of the system that log directly to the python logging
+        # system.
+        class PropagateHandler(logging.Handler):
+            def emit(self, record):
+                logging.getLogger(record.name).handle(record)
+
+        logger.add(PropagateHandler(), format="{message}")
+
+        # Add ECS rotating files sink
+        pylogger = logging.getLogger()
+        ecs_handler = logging.handlers.RotatingFileHandler(
+            self.ECS_LOG_PATH,
+            maxBytes=100_000_000,
+            backupCount=2,
+            encoding="utf8",
+        )
+        ecs_handler.setFormatter(
+            ecs_logging.StdlibFormatter(
+                extra={
+                    "release": self.RELEASE,
+                    "project": self.PROJECT_NAME,
+                }
+            )
+        )
+        ecs_handler.setLevel(logging.INFO)
+        pylogger.addHandler(ecs_handler)
+
         return True
 
     # Application Path
@@ -126,3 +162,4 @@ def get_settings(settings: Settings = None, env_file: str = None, **kwargs) -> S
 # # define the settings (use the env file if it's used)
 env_file = os.environ.get("ENV_FILE", None)
 settings = get_settings(env_file=env_file)
+settings._setup_logger()

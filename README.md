@@ -13,7 +13,7 @@ It's based on **Modern Python Tools** such as:
 - black: for code formatting
 - bandit: for security checks
 - pre-commit: for pre-commit hooks
-- pdm: for linting
+- ruff: for linting
 
 We suggest to use **VSCode** as IDE for this project since you can find a lot of prepared configurations for:
 - debugging
@@ -26,19 +26,20 @@ You can find and extensive documentation created with **mkdocs** to [this github
 
 ## Next step
 
-1. Fix cookiecutter for windows powershell usage
+1. ~~Fix cookiecutter for windows powershell usage~~
 2. Add mkdocs implementation on Base package with an example with python code
-3. Fix pre-commit
-4. Publish mkdocs documentation page on gitlab pages
-5. Add better implementation of detect-secrets
-6. Better README documentation and CONTRIBUTING documentation
-7. Fix the docker with poetry
-8. Fix the devcontainer
-9. Add a docker container with PDM installation
-10. Add sphynx implementation with cookiecutter rule to choose between mkdocs and sphynx
-11. Add gitlab pipeline example
-12. Add github pipeline example
-13. Add package build
+3. Publish mkdocs documentation page on gitlab pages
+4. Add sphynx implementation with cookiecutter rule to choose between mkdocs and sphynx
+5. ~~Fix pre-commit~~
+6. Add better implementation of detect-secrets
+7. Add a system to check dependencies updates, vulnerabilities and security issues
+8. Better README documentation and CONTRIBUTING documentation
+9. ~~Fix the docker with poetry~~
+10. ~~Fix the devcontainer~~
+11. ~~Add a docker container with PDM installation~~
+12. Add gitlab pipeline example
+13. Add github pipeline example
+14. ~~Add package build~~
 
 
 ## How to use it
@@ -52,15 +53,25 @@ pip install cookiecutter
 
 You can use this following command (both on Windows and Posix systems):
 ```bash
-cookiecutter gh:PythonBiellaGroup/bear
-```
+# If you are using https
+cookiecutter https://github.com/PythonBiellaGroup/Bear.git
 
-Or also with the full https path:
-```bash
-cookiecutter https://github.com/PythonBiellaGroup/Bear
+# If you are using ssh
+cookiecutter git@github.com:PythonBiellaGroup/Bear.git
 ```
 
 once you launch this commands just follow the guide and fill the required fields.
+
+You can also create an Alias for this command to make it easier to use it in your terminal:
+```bash
+# If you are using https
+alias pbg-project="cookiecutter https://github.com/PythonBiellaGroup/Bear.git --overwrite-if-exists"
+
+# If you are using ssh
+alias pbg-project="cookiecutter git@github.com:PythonBiellaGroup/Bear.git --overwrite-if-exists"
+```
+
+so you can use simply the command: `pbg-project` after you restart your terminal to download and create a new project.
 
 ## How to maintain it
 
@@ -78,7 +89,7 @@ Unfortunately there is no automatic way to update the templates inside cookiecut
 
 Please remember also to follow a Gitflow workflow and to use the **develop** branch as the main branch for development.
 
-### Documentation
+### Technical Documentation
 
 We use **mkdocs** to create the documentation for this project.
 
@@ -104,7 +115,11 @@ This repository is licensed under the MIT license. See LICENSE file for details.
 
 If you use this repository in your work, please cite it as or just write to us to say thanks with your feedback and experience :)
 
-## Documentation
+## Known issues
+
+With mac if you want to use `devcontainer` with vscode probably you will experience a long building time on the first time. This is due to the `amd64` base docker image we are using as a baseline.
+
+## References
 
 Useful links and other documentation website you can check
 
