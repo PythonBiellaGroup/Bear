@@ -91,7 +91,7 @@
                 "webhint.vscode-webhint",
                 "redhat.vscode-yaml",
                 "charliermarsh.ruff"
-	        ]
+            ]
         }
     },
 	// Add the IDs of extensions you want installed when the container is created.
