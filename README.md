@@ -51,15 +51,25 @@ pip install cookiecutter
 
 You can use this following command (both on Windows and Posix systems):
 ```bash
-cookiecutter gh:PythonBiellaGroup/bear
-```
+# If you are using https
+cookiecutter https://github.com/PythonBiellaGroup/Bear.git
 
-Or also with the full https path:
-```bash
-cookiecutter https://github.com/PythonBiellaGroup/Bear
+# If you are using ssh
+cookiecutter git@github.com:PythonBiellaGroup/Bear.git
 ```
 
 once you launch this commands just follow the guide and fill the required fields.
+
+You can also create an Alias for this command to make it easier to use it in your terminal:
+```bash
+# If you are using https
+alias pbg-project="cookiecutter https://github.com/PythonBiellaGroup/Bear.git --overwrite-if-exists"
+
+# If you are using ssh
+alias pbg-project="cookiecutter git@github.com:PythonBiellaGroup/Bear.git --overwrite-if-exists"
+```
+
+so you can use simply the command: `pbg-project` after you restart your terminal to download and create a new project.
 
 ## How to maintain it
 
