@@ -27,17 +27,18 @@ You can find and extensive documentation created with **mkdocs** to [this github
 
 1. ~~Fix cookiecutter for windows powershell usage~~
 2. Add mkdocs implementation on Base package with an example with python code
-3. ~~Fix pre-commit~~
-4. Publish mkdocs documentation page on gitlab pages
-5. Add better implementation of detect-secrets
-6. Better README documentation and CONTRIBUTING documentation
-7. ~~Fix the docker with poetry~~
-8. Fix the devcontainer
-9. ~~Add a docker container with PDM installation~~
-10. Add sphynx implementation with cookiecutter rule to choose between mkdocs and sphynx
-11. Add gitlab pipeline example
-12. Add github pipeline example
-13. ~~Add package build~~
+3. Publish mkdocs documentation page on gitlab pages
+4. Add sphynx implementation with cookiecutter rule to choose between mkdocs and sphynx
+5. ~~Fix pre-commit~~
+6. Add better implementation of detect-secrets
+7. Add a system to check dependencies updates, vulnerabilities and security issues
+8. Better README documentation and CONTRIBUTING documentation
+9. ~~Fix the docker with poetry~~
+10. ~~Fix the devcontainer~~
+11. ~~Add a docker container with PDM installation~~
+12. Add gitlab pipeline example
+13. Add github pipeline example
+14. ~~Add package build~~
 
 
 ## How to use it
@@ -87,7 +88,7 @@ Unfortunately there is no automatic way to update the templates inside cookiecut
 
 Please remember also to follow a Gitflow workflow and to use the **develop** branch as the main branch for development.
 
-### Documentation
+### Technical Documentation
 
 We use **mkdocs** to create the documentation for this project.
 
@@ -113,7 +114,11 @@ This repository is licensed under the MIT license. See LICENSE file for details.
 
 If you use this repository in your work, please cite it as or just write to us to say thanks with your feedback and experience :)
 
-## Documentation
+## Known issues
+
+With mac if you want to use `devcontainer` with vscode probably you will experience a long building time on the first time. This is due to the `amd64` base docker image we are using as a baseline.
+
+## References
 
 Useful links and other documentation website you can check
 

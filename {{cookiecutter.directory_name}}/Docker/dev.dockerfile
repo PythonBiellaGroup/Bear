@@ -6,7 +6,10 @@ LABEL maintainer="PBG"
 LABEL version="0.1"
 
 ARG YOUR_ENV="virtualenv"
-ARG POETRY_VERSION="1.3"
+ARG POETRY_VERSION=1.3.2
+ARG PYTHON_VERSION=3.9
+ARG USER=vscode
+ARG DEBIAN_FRONTEND=noninteractive
 
 ENV YOUR_ENV=${YOUR_ENV} \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -47,8 +50,26 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y \
 # RUN perl -pi -e 's:/etc/hosts:/tmp/hosts:g' /lib-override/libnss_files.so.2
 # ENV LD_LIBRARY_PATH /lib-override
 
-RUN  wget -O install-poetry.py https://install.python-poetry.org/ \
-    && python install-poetry.py --version ${POETRY_VERSION}
+# Python and poetry installation
+USER $USER
+ARG HOME="/home/$USER"
+
+ENV PYENV_ROOT="${HOME}/.pyenv"
+ENV PATH="${PYENV_ROOT}/shims:${PYENV_ROOT}/bin:${HOME}/.local/bin:$PATH"
+
+# ARG PYTHON_VERSION=3.10
+RUN echo "done 0" \
+    && curl https://pyenv.run | bash \
+    && echo "done 1" \
+    && pyenv install ${PYTHON_VERSION} \
+    && echo "done 2" \
+    && pyenv global ${PYTHON_VERSION} \
+    && echo "done 3" \
+    && curl -sSL https://install.python-poetry.org | python3 - --version ${POETRY_VERSION}\
+    && poetry config virtualenvs.in-project true
+
+# RUN  wget -O install-poetry.py https://install.python-poetry.org/ \
+#     && python install-poetry.py --version ${POETRY_VERSION}
 
 # Install Node
 #RUN apt-get update && apt-get install -y curl && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs
@@ -59,7 +80,7 @@ RUN  wget -O install-poetry.py https://install.python-poetry.org/ \
 
 ##########################
 # Project Python definition
-WORKDIR /workspace
+# WORKDIR /workspace
 
 #Copy all the project files
 COPY . .
