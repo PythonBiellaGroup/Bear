@@ -183,6 +183,7 @@ Reach out the community of PythonBiellaGroup!
 [![Contacts][contacts-shield]][contacts-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## References
 
 Useful links and other documentation website you can check
