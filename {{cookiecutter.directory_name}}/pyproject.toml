@@ -223,72 +223,62 @@ format      = "grouped"
 target-version = "py39"
 # Enable Pyflakes `E` and `F` codes by default.
 select = [
-    "A",
-    # "ANN",
-    "ARG",
-    "B",
-    "BLE",
-    "C",
-    "C4",
-    "C90",
-    "D",
-    "DTZ",
-    "E",
-    "EM",
-    "ERA",
-    "F",
-    "FBT",
-    "I",
-    "ICN",
-    "ISC",
-    "N",
-    "PD",
-    "PGH",
-    "PLC",
-    "PLE",
-    "PLR",
-    "PLW",
-    "PT",
-    "Q",
-    "RET",
-    "RUF",
-    "S",
-    "SIM",
-    "T",
-    "T10",
-    "T20",
-    "TID",
-    "UP",
-    "W",
-    "YTT",]
-# Never enforce `E501` (line length violations).
-ignore = ["BLE001", "D203", "D213", "D417", "E501"]
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "BLE",  # aboid bare excepts
+    "C4",   # simplify comprehensions
+    "DTZ",  # datetime errors
+    "FBT",  # avoid boolean trap
+    "G",   # logging format
+    "I",    # flake8-isort import
+    "N",    # pep8 naming
+    "RET",  # return statements values
+    "S",    # bandit
+    "TRY",  # try except exceptions antipatterns
+    "YTT",  # wrong usage of sys.info
+    "B",  # flake8-bugbear
+]
+
+ignore = ["BLE001", 
+        "D203",
+        "D213",
+        "D417",
+        "E501",
+        "D107",
+        "E501",  # line too long, handled by black
+        "B008",  # do not perform function calls in argument defaults
+        "C901",  # too complex
+]
 # Always autofix, but never try to fix `F401` (unused imports).
-fix     = true
+fix = true
 unfixable = ["F401"]
 # Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-# # Exclude a variety of commonly ignored directories (you can have some problems)
-# exclude = [
-#     ".direnv",
-#     ".eggs",
-#     ".git",
-#     ".hg",
-#     ".mypy_cache",
-#     ".nox",
-#     ".pants.d",
-#     ".ruff_cache",
-#     ".svn",
-#     ".tox",
-#     ".venv",
-#     "__pypackages__",
-#     "_build",
-#     "buck-out",
-#     "build",
-#     "dist",
-#     "node_modules",
-#     "venv",
-# ]
+dummy-variable-rgx = ">=(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+# Exclude a variety of commonly ignored directories (you can have some problems)
+exclude = [
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    ".venv"
+]
 
 [tool.ruff.mccabe]
 # Unlike Flake8, default to a complexity level of 10.
@@ -297,6 +287,15 @@ max-complexity = 10
 [tool.ruff.flake8-quotes]
 docstring-quotes = "double"
 
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[too.ruff.pycodestyle]
+max-doc-lenght = 120
+
 [tool.ruff.per-file-ignores]
-"__init__.py" = ["D104"]
+"__init__.py" = ["D104", "F401", "I002"]
 "test*.py"    = ["S101", "T201"]
+
+[tool.ruff.isort]
+known-third-party = ["fastapi", "pydantic", "starlette"]
