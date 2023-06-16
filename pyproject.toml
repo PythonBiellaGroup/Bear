@@ -94,13 +94,13 @@ authors = [
     {name = "PBG", email = "pythonbiellagroup@gmail.com"},
 ]
 dependencies = [
-    "Unidecode>=1.3.6",
     "detect-secrets>=1.4.0",
     "ecs-logging>=2.0.0",
     "loguru>=0.6.0",
     "pyaml>=21.10.1",
     "pydantic>=1.10.4",
     "python-dotenv>=0.21.0",
+    "Unidecode>=1.3.6",
 ]
 requires-python = ">=3.9.8,<3.11.1"
 license = {text = "MIT"}
@@ -145,15 +145,15 @@ dev = [
     "types-urllib3>=1.26.25.4",
 ]
 docs = [
-    "mkdocs"=">=1.4.2",
-    "mkdocs-autorefs"=">=0.4.1",
-    "mkdocs-gallery"=">=0.7.6",
-    "mkdocs-jupyter"=">=0.22.0",
-    "mkdocs-macros-plugin"=">=0.7.0",
-    "mkdocs-material"=">=8.5.11",
-    "mkdocs-minify-plugin"=">=0.6.2",
-    "mkdocs-redirects"=">=1.2.0",
-    "mkdocstrings"=">=0.20.0",
+    "mkdocs>=1.4.2",
+    "mkdocs-autorefs>=0.4.1",
+    "mkdocs-gallery>=0.7.6",
+    "mkdocs-jupyter>=0.22.0",
+    "mkdocs-macros-plugin>=0.7.0",
+    "mkdocs-material>=8.5.11",
+    "mkdocs-minify-plugin>=0.6.2",
+    "mkdocs-redirects>=1.2.0",
+    "mkdocstrings>=0.20.0",
 ]
 
 # --- Plugins configurations --------------------------------------------- #
@@ -217,7 +217,6 @@ style = [
     ["text", ""],
     ["disabled", "fg:#858585 italic"]
 ]
-
 
 [tool.ruff]
 line-length = 120
