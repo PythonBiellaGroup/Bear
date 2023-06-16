@@ -217,6 +217,7 @@ style = [
     ["disabled", "fg:#858585 italic"]
 ]
 
+
 [tool.ruff]
 line-length = 120
 format      = "grouped"
@@ -224,15 +225,13 @@ format      = "grouped"
 target-version = "py39"
 # Enable Pyflakes `E` and `F` codes by default.
 select = [
-    #default
-    "E",    # pycodestyle error
-    "F",    #flake8 error
-    #extra
-    "A",    # bultin shadowing
-    "B",    # flake8 bugbear
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
     "BLE",  # aboid bare excepts
     "C4",   # simplify comprehensions
-    "D",    # pydocstyle
     "DTZ",  # datetime errors
     "FBT",  # avoid boolean trap
     "G",   # logging format
@@ -241,12 +240,20 @@ select = [
     "RET",  # return statements values
     "S",    # bandit
     "TRY",  # try except exceptions antipatterns
-    "UP",   # upgrade syntax
-    "W",    # pycodestyle warnings
     "YTT",  # wrong usage of sys.info
-    ]
-# Never enforce `E501` (line length violations).
-ignore = ["BLE001", "D203", "D213", "D417", "E501", "D107"]
+    "B",  # flake8-bugbear
+]
+
+ignore = ["BLE001", 
+        "D203",
+        "D213",
+        "D417",
+        "E501",
+        "D107",
+        "E501",  # line too long, handled by black
+        "B008",  # do not perform function calls in argument defaults
+        "C901",  # too complex
+]
 # Always autofix, but never try to fix `F401` (unused imports).
 fix = true
 unfixable = ["F401"]
@@ -291,3 +298,6 @@ max-doc-lenght = 120
 [tool.ruff.per-file-ignores]
 "__init__.py" = ["D104", "F401", "I002"]
 "test*.py"    = ["S101", "T201"]
+
+[tool.ruff.isort]
+known-third-party = ["fastapi", "pydantic", "starlette"]
