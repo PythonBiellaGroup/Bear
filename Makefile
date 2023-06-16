@@ -50,6 +50,10 @@ poetry_plugins_install: ## Install and configure the poetry plugins
 	@echo "Install poetry-plugin-sort"
 	@poetry self add poetry-plugin-sort
 
+poetry_update: ## Update the poetry environment
+	@echo "🚀 Updating virtual environment using poetry"
+	@poetry self update
+
 poetry_plugins: ## Launch the poetry plugins
 	@echo "Launching poetry-plugin-sort"
 	@poetry sort
