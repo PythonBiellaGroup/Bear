@@ -1265,6 +1265,25 @@ url = "https://pypi.org/simple"
 reference = "pypi.org"
 
 [[package]]
+name = "griffe"
+version = "0.32.3"
+description = "Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "griffe-0.32.3-py3-none-any.whl", hash = "sha256:d9471934225818bf8f309822f70451cc6abb4b24e59e0bb27402a45f9412510f"},
+    {file = "griffe-0.32.3.tar.gz", hash = "sha256:14983896ad581f59d5ad7b6c9261ff12bdaa905acccc1129341d13e545da8521"},
+]
+
+[package.dependencies]
+colorama = ">=0.4"
+
+[package.source]
+type = "legacy"
+url = "https://pypi.org/simple"
+reference = "pypi.org"
+
+[[package]]
 name = "htmlmin2"
 version = "0.1.13"
 description = "An HTML Minifier"
@@ -2442,6 +2461,26 @@ typing-extensions = {version = ">=4.1", markers = "python_version < \"3.10\""}
 crystal = ["mkdocstrings-crystal (>=0.3.4)"]
 python = ["mkdocstrings-python (>=0.5.2)"]
 python-legacy = ["mkdocstrings-python-legacy (>=0.2.1)"]
+
+[package.source]
+type = "legacy"
+url = "https://pypi.org/simple"
+reference = "pypi.org"
+
+[[package]]
+name = "mkdocstrings-python"
+version = "1.2.0"
+description = "A Python handler for mkdocstrings."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mkdocstrings_python-1.2.0-py3-none-any.whl", hash = "sha256:2924c9c4286fd236bdae64402b5cc5010dee13779b3edf1a65d97bc02303657b"},
+    {file = "mkdocstrings_python-1.2.0.tar.gz", hash = "sha256:e16bedc236a3a6aa04c916ae6b9d37d2299c80c6e7169fc481a30ed9f8f362a4"},
+]
+
+[package.dependencies]
+griffe = ">=0.30"
+mkdocstrings = ">=0.20"
 
 [package.source]
 type = "legacy"
@@ -4686,4 +4725,4 @@ reference = "pypi.org"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9.8, <=3.11"
-content-hash = "03f27451ccdb4b0524005b42f1325f01d80321a1ab0d245931c1ec3b68b9e4be"
+content-hash = "344f4606a2387829a1efe7c5369b50749732565c9796e5b8f3c60b6b36607bc6"
