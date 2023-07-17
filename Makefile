@@ -58,6 +58,7 @@ poetry_update: ## Update the poetry environment
 poetry_plugins: ## Launch the poetry plugins
 	@echo "Launching poetry-plugin-sort"
 	@poetry sort
+	@poetry git-version
 
 .PHONY: test
 test: ## Test the code with pytest.
