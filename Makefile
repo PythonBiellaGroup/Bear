@@ -49,6 +49,7 @@ check_project: ## Run code quality tools.
 poetry_plugins_install: ## Install and configure the poetry plugins
 	@echo "Install poetry-plugin-sort"
 	@poetry self add poetry-plugin-sort
+	@poetry self add poetry-git-version-plugin
 
 poetry_update: ## Update the poetry environment
 	@echo "🚀 Updating virtual environment using poetry"
