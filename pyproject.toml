@@ -223,6 +223,11 @@ line-length = 120
 format      = "grouped"
 # Assume Python 3.9.
 target-version = "py39"
+
+# A list of file patterns to include when linting.
+include = ["**/pyproject.toml", "*.ipynb", "*.py", "*.pyi"]
+
+# Rules: https://beta.ruff.rs/docs/rules/
 # Enable Pyflakes `E` and `F` codes by default.
 select = [
     #default
@@ -233,6 +238,7 @@ select = [
     "B",    # flake8 bugbear
     "BLE",  # aboid bare excepts
     "C4",   # simplify comprehensions
+    "D",    # docstyle
     "DTZ",  # datetime errors
     "FBT",  # avoid boolean trap
     "G",    # logging format
@@ -245,16 +251,18 @@ select = [
     "B",  # flake8-bugbear
 ]
 
-ignore = ["BLE001", 
-        "D203",
-        "D213",
-        "D417",
-        "E501",
-        "D107",
-        "E501",  # line too long, handled by black
-        "B008",  # do not perform function calls in argument defaults
-        "C901",  # too complex
+ignore = [
+    "B008",   # do not perform function calls in argument defaults
+    "BLE001", #Do not catch blind exception: {name}
+    "C901",   # too complex
+    "D107",   # Missing docstring in __init__
+    "D203",   # 1 blank line required before class docstring
+    "D213",   # Multi-line docstring summary should start at the second line
+    "D417",   # Missing argument description in the docstring for {definition}: {name}
+    "E501",   # Line too long ({width} > {limit} characters)
+    "E501",   # line too long, handled by black
 ]
+
 # Always autofix, but never try to fix `F401` (unused imports).
 fix = true
 unfixable = ["F401"]
