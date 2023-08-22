@@ -90,7 +90,7 @@ version = "0.0.1"
 description = "{{cookiecutter.project_description}}"
 authors = [{name="{{cookiecutter.author}}"}]
 dependencies = [
-    "ecs-logging>=2.0.0"
+    "ecs-logging>=2.0.0",
     "loguru>=0.6.0",
     "numpy>=1.24.1",
     "pandas>=1.5.2",
