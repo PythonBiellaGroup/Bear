@@ -6,7 +6,7 @@ LABEL maintainer="PBG"
 LABEL version="0.1"
 
 ARG YOUR_ENV="virtualenv"
-ARG POETRY_VERSION=1.3.2
+ARG POETRY_VERSION=1.6.1
 
 ARG DEBIAN_FRONTEND=noninteractive
 

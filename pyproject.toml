@@ -3,11 +3,10 @@
 name = "PBG Bear"
 version = "0.1.1"
 description = "PBG Python template collection"
-authors = ["PBG"]
+authors = ["PBG <info@pythonbiellagroup.it>"]
 license = "MIT"
 homepage = "https://pythonbiellagroup.it"
 repository = "https://github.com/PythonBiellaGroup/Bear"
-documentation = ""
 keywords = [
     "cookiecutter",
     "template",
@@ -26,12 +25,12 @@ build-backend = "poetry.core.masonry.api"
 [[tool.poetry.source]]
 name = "pypi.org"
 url = "https://pypi.org/simple"
-priority = "default"
+priority = 'default'
 
 # [[tool.poetry.source]]
 # name = "private"
 # url = "https://github.com"
-# secondary = true
+# priority = 'primary'
 
 [tool.poetry.group.docs]
 optional = true

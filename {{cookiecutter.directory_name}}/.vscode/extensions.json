@@ -11,6 +11,7 @@
     "ms-azuretools.vscode-docker",
     "mikestead.dotenv",
     "dbaeumer.vscode-eslint",
+    "tamasfe.even-better-toml",
     "ms-python.flake8",
     "mhutchie.git-graph",
     "donjayamanne.githistory",
