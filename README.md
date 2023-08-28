@@ -202,6 +202,7 @@ Useful links and other documentation website you can check
 - [dev container video tutorial](https://www.youtube.com/watch?v=0H2miBK_gAk)
 - [Ruff official documentation](https://github.com/charliermarsh/ruff/blob/main/README.md)
 - [Ruff vscode extension](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
+- [Chef repository with some more modern tooling](https://github.com/baggiponte/chef)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

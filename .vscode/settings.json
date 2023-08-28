@@ -1,15 +1,11 @@
 {
   "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
   "python.terminal.activateEnvInCurrentTerminal": true,
-  "python.linting.flake8Enabled": true,
-  "python.linting.mypyEnabled": false,
-  "python.linting.enabled": true,
   "python.testing.pytestArgs": ["test"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "editor.formatOnSave": true,
   "files.autoSave": "afterDelay",
-  "python.formatting.provider": "black",
   "autoDocstring.customTemplatePath": ".vscode/google_no_types.mustache",
   "window.title": "PBG Bear | ${rootName} ${separator} ${activeEditorShort}",
   "[python]": {

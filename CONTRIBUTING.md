@@ -7,3 +7,6 @@
 # Submitting changes
 
 # Coding conventions
+
+
+# Other informations and support
