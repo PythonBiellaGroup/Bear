@@ -1,45 +1,58 @@
----
 default_language_version:
   python: python3.9
 default_stages: [commit, push]
 repos:
-  - hooks:
-      - entry: poetry run black .
-        id: black
-        language: system
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files # Prevent giant files from being committed
+        args: [--maxkb=5000]
+      - id: check-json # Attempts to load all json files to verify syntax
+        exclude: ^.vscode
+      - id: check-merge-conflict # Check for files that contain merge conflict strings
+      - id: check-toml # Attempts to load all TOML files to verify syntax
+      - id: detect-private-key # Checks for the existence of private keys
+      - id: pretty-format-json # Checks that all your JSON files are pretty. "Pretty" here means that keys are sorted and indented. You can configure this with the following commandline options
+        args: [--autofix]
+        exclude: ^.vscode
+        # exclude: ^(dev|.*\.vscode)
+  - repo: local
+    hooks:
+      - id: black
         name: black
-        types: [python]
-      - entry: poetry run flake8 .
-        id: flake8
+        entry: poetry run black .
         language: system
-        name: flake8
         types: [python]
-    repo:
-      local
-      #   language: system
-      #   types: [python]
-      #   - id: detect_secrets
-      #     name: detect_secrets
-      #     entry: poetry run detect-secrets scan --baseline .secrets.baseline .
-      #     language: system
-      #     types: [python]
-      #     exclude: package.lock.json
-      # - id: detect-secrets
-      #   name: detect-secrets
-      #   # entry: git ls-files -z | xargs -0 detect-secrets-hook --baseline .secrets.baseline
-      #   entry: git diff --staged --name-only -z | xargs -0 detect-secrets-hook --baseline .secrets.baseline
-      #   language: system
-      #   types: [python]
-      # - id: ruff
-      #   name: ruff
-      #   entry: poetry run ruff --fix --no-cache --force-exclude .
-#      - id: isort
-#        name: isort
-#        entry: poetry run isort .
-#        language: system
-#        types: [python]
-# - id: poetry-check
-#   name: poetry check
-#   entry: poetry check
-#   language: system
-#   types: [bash]
+      - id: flake8
+        name: flake8
+        entry: poetry run flake8 .
+        language: system
+        types: [python]
+      - id: isort
+        name: isort
+        entry: poetry run isort .
+        language: system
+        types: [python]
+      - id: poetry-check
+        name: poetry check
+        entry: poetry check
+        language: system
+        types: [python]
+      - id: detect-secrets
+        name: detect-secrets
+        # entry: git ls-files -z | xargs -0 detect-secrets-hook --baseline .secrets.baseline
+        entry: git diff --staged --name-only -z | xargs -0 detect-secrets-hook --baseline .secrets.baseline
+        language: system
+        types: [bash]
+      - id: detect_secrets
+        name: detect_secrets
+        entry: poetry run detect-secrets scan --baseline .secrets.baseline .
+        language: system
+        types: [python]
+        exclude: package.lock.json
+      - id: ruff
+        name: ruff
+        #   entry: poetry run ruff --fix --no-cache --force-exclude .
+        entry: poetry run ruff --no-cache --force-exclude .
+        language: system
+        types: [python]

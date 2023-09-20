@@ -25,7 +25,6 @@ select = [
     "N",    # pep8 naming
     "RET",  # return statements values
     "S",    # bandit
-    "TRY",  # try except exceptions antipatterns
     "YTT",  # wrong usage of sys.info
     "B",  # flake8-bugbear
 ]
@@ -40,6 +39,7 @@ ignore = [
     "D417",   # Missing argument description in the docstring for {definition}: {name}
     "E501",   # Line too long ({width} > {limit} characters)
     "E501",   # line too long, handled by black
+    "D100",
 ]
 
 # Always autofix, but never try to fix `F401` (unused imports).
@@ -79,9 +79,6 @@ docstring-quotes = "double"
 
 [pydocstyle]
 convention = "google"
-
-[pycodestyle]
-max-doc-lenght = 120
 
 [isort]
 known-third-party = ["fastapi", "pydantic", "starlette"]
