@@ -46,19 +46,19 @@ check_project: ## Run code quality tools.
 # poetry run deptry .
 
 .PHONE: poetry_plugins
+# poetry self add poetry-git-version-plugin
 poetry_plugins_install: ## Install and configure the poetry plugins
 	@echo "Install poetry-plugin-sort"
 	@poetry self add poetry-plugin-sort
-	@poetry self add poetry-git-version-plugin
-
-poetry_update: ## Update the poetry environment
-	@echo "🚀 Updating virtual environment using poetry"
-	@poetry self update
+	@poetry self add poetry-plugin-up
 
 poetry_plugins: ## Launch the poetry plugins
 	@echo "Launching poetry-plugin-sort"
 	@poetry sort
-	@poetry git-version
+
+poetry_update: ## Update the poetry environment
+	@echo "🚀 Updating virtual environment using poetry"
+	@poetry self update
 
 .PHONY: test
 test: ## Test the code with pytest.

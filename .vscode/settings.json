@@ -1,12 +1,11 @@
 {
-  "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
-  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  "python.envFile": "${workspaceFolder}/.env",
   "python.testing.pytestArgs": ["test"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
-  "editor.formatOnSave": true,
   "files.autoSave": "afterDelay",
-  "autoDocstring.customTemplatePath": ".vscode/google_no_types.mustache",
+  "autoDocstring.customTemplatePath": "",
   "window.title": "PBG Bear | ${rootName} ${separator} ${activeEditorShort}",
   "[python]": {
     "editor.insertSpaces": true,
@@ -15,10 +14,13 @@
   "files.exclude": {
     "**/__pycache__": true
   },
-  "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#ff4081",
-    "activityBar.background": "#4F1D22",
-    "titleBar.activeBackground": "#6F2830",
-    "titleBar.activeForeground": "#FEFBFC"
-  }
+  "python.languageServer": "Pylance",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "notebook.lineNumbers": "on",
+  "editor.inlineSuggest.enabled": true,
+  "editor.formatOnType": true,
+  "git.autofetch": true,
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "python.terminal.activateEnvInCurrentTerminal": true,
 }

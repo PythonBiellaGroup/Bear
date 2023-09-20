@@ -1,12 +1,23 @@
 # How too contribute
 
-# Develop
+Contributions it's the most important things for us!!
 
-# Testing
+We are a community and without your help and the help of the contributors we cannot do nothing :)
 
-# Submitting changes
+So first of all: THANK YOU!
 
-# Coding conventions
+If you want to contribute to this repository please check this requirements before:
 
+- Have poetry and python installed: check the `pyproject.toml` to find the right versions used in this project
+- You can install and use also `pdm`, it's configured but not officially supported in this repository
+- Have `makefile` or `just` installed. We suggest to use `just` because it's more modern and easily to install also on windows.
 
-# Other informations and support
+## Develop
+
+## Testing
+
+## Submitting changes
+
+## Coding conventions
+
+## Other informations and support
