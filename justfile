@@ -4,6 +4,21 @@ help:
 	Type:\tjust --list if you want a list of available recipes. \n\
 	Launch:\tjust <recipe_name> if you want to launch a specific recipe.\n"""
 
+# bake without inputs and overwrite if exists.
+bake:
+	@cookiecutter --no-input . --overwrite-if-exists
+
+# remove a previous cookiecutter bake
+bake-clear:
+	@rm -rf testone || true
+	@rm -rf python-skeleton || true
+
+# bake the base project to test
+bake-test:
+	@rm -rf testone || true
+	@poetry run cookiecutter --no-input . --overwrite-if-exists --config-file config.yaml
+	@code testone
+
 # Configure and install pre commit tool
 install_pre_commit: 
 	poetry run pre-commit install
