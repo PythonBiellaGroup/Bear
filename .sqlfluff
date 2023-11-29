@@ -1,0 +1,25 @@
+[sqlfluff]
+templater = placeholder
+dialect = oracle
+exclude_rules =
+
+
+[sqlfluff:templater:placeholder]
+  param_style = colon
+
+[sqlfluff:layout:type:alias_expression]
+spacing_before = align
+align_within = select_clause
+spacing_after = touch
+
+[sqlfluff:indentation]
+tab_space_size = 2
+indent_unit = space
+indented_joins = false
+indented_using_on = true
+allow_implicit_indents = true
+indented_on_contents = true
+indented_ctes = true
+
+[sqlfluff:layout:type:comma]
+line_position = leading
