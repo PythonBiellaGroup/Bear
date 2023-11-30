@@ -21,6 +21,6 @@
   "editor.inlineSuggest.enabled": true,
   "editor.formatOnType": true,
   "git.autofetch": true,
-  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.defaultFormatter": "charliermarsh.ruff",
   "python.terminal.activateEnvInCurrentTerminal": true,
 }
