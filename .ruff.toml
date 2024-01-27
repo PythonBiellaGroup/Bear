@@ -64,13 +64,11 @@ ignore = [
     "D213",   # Multi-line docstring summary should start at the second line
     "D417",   # Missing argument description in the docstring for {definition}: {name}
     "E501",   # Line too long ({width} > {limit} characters)
-    "E501",   # line too long, handled by black
     "D100",
 ]
 
 # Always autofix, but never try to fix `F401` (unused imports).
 fix = true
-fixable = ["ALL"]
 unfixable = ["F401"]
 
 # Allow unused variables when underscore-prefixed.
