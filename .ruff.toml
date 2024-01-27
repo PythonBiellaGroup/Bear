@@ -8,6 +8,30 @@ target-version = "py39"
 include = ["**/pyproject.toml", "*.py", "*.pyi"]
 extend-include = ["*.ipynb"]
 
+# Exclude a variety of commonly ignored directories (you can have some problems)
+exclude = [
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    ".venv"
+]
+
+[lint]
 # Rules: https://beta.ruff.rs/docs/rules/
 # Enable Pyflakes `E` and `F` codes by default.
 select = [
@@ -48,30 +72,9 @@ ignore = [
 fix = true
 fixable = ["ALL"]
 unfixable = ["F401"]
+
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = ">=(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
-# Exclude a variety of commonly ignored directories (you can have some problems)
-exclude = [
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
-    ".venv"
-]
 
 [format]
 # select = ["E4", "E7", "E9", "F"]
@@ -82,19 +85,19 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
 
-[mccabe]
+[lint.mccabe]
 # Unlike Flake8, default to a complexity level of 10.
 max-complexity = 10
 
-[flake8-quotes]
+[lint.flake8-quotes]
 docstring-quotes = "double"
 
-[pydocstyle]
+[lint.pydocstyle]
 convention = "google"
 
-[isort]
+[lint.isort]
 known-third-party = ["fastapi", "pydantic", "starlette"]
 
-[per-file-ignores]
+[lint.per-file-ignores]
 "__init__.py" = ["D104", "F401", "I002"]
 "test*.py"    = ["S101", "T201"]
