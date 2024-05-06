@@ -11,9 +11,9 @@ backcall==0.2.0
 bandit==1.7.4
 beautifulsoup4==4.11.1
 binaryornot==0.4.4
-black==22.12.0
+black==24.3.0
 bleach==5.0.1
-certifi==2022.12.7
+certifi==2023.7.22
 cffi==1.15.1
 chardet==5.1.0
 charset-normalizer==2.1.1
@@ -37,8 +37,8 @@ flake8-isort==4.2.0
 flake8-polyfill==1.0.2
 fqdn==1.5.1
 gitdb==4.0.10
-GitPython==3.1.30
-idna==3.4
+GitPython==3.1.41
+idna==3.7
 importlib-metadata==6.0.0
 iniconfig==2.0.0
 ipykernel==6.19.4
@@ -48,7 +48,7 @@ ipywidgets==8.0.4
 isoduration==20.11.0
 isort==5.11.4
 jedi==0.18.2
-Jinja2==3.1.2
+Jinja2==3.1.4
 jinja2-time==0.2.0
 jsonpointer==2.3
 jsonschema==4.17.3
@@ -57,7 +57,7 @@ jupyter-client==7.4.8
 jupyter-console==6.4.4
 jupyter-core==5.1.2
 jupyter-events==0.5.0
-jupyter-server==2.0.6
+jupyter-server==2.11.2
 jupyter-server-terminals==0.4.3
 jupyterlab-pygments==0.2.2
 jupyterlab-widgets==3.0.5
@@ -109,7 +109,7 @@ pyzmq==24.0.1
 qtconsole==5.4.0
 qtpy==2.3.0
 questionary==1.10.0
-requests==2.28.1
+requests==2.31.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 ruff==0.0.213
@@ -127,12 +127,12 @@ tinycss2==1.2.1
 toml==0.10.2
 tomli==2.0.1
 tomlkit==0.11.6
-tornado==6.2
+tornado==6.3.3
 traitlets==5.8.0
 typing-extensions==4.4.0
 Unidecode==1.3.6
 uri-template==1.2.0
-urllib3==1.26.13
+urllib3==1.26.18
 wcwidth==0.2.5
 webcolors==1.12
 webencodings==0.5.1
