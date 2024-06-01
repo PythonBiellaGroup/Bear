@@ -1,10 +1,15 @@
-####----Basic configurations----####
 .PHONY: pre-commit
 install_pre_commit: ## configure and install pre commit tool
 	@poetry run pre-commit install
 
 uninstall_pre_commit: ## configure and install pre commit tool
 	@poetry run pre-commit uninstall
+
+update_pre_commit: ## update pre-commit version and rules
+	@poetry run pre-commit autoupdate
+
+pre_commit: ## run pre-commit checks
+	@poetry run pre-commit run -a
 
 .PHONY: install
 install: ## Install the poetry and python environment
@@ -16,11 +21,6 @@ install-poetry: ## Install the poetry environment
 	@echo "🚀 Creating virtual environment using pyenv and poetry"
 	@poetry install
 	@poetry shell
-
-install-pdm: ## Install the poetry environment
-	@echo "🚀 Creating virtual environment using pyenv and PDM"
-	@pdm install
-	@pdm use
 
 .PHONY: check_project
 check_project: ## Run code quality tools.
@@ -42,6 +42,9 @@ poetry_plugins: ## Launch the poetry plugins
 	@echo "Launching poetry-plugin-sort"
 	@poetry sort
 
+poetry_update: ## Update the poetry environment
+	@echo "🚀 Updating virtual environment using poetry"
+	@poetry self update
 
 .PHONY: test
 test: ## Test the code with pytest.
@@ -50,12 +53,10 @@ test: ## Test the code with pytest.
 
 ### Project specific tasks
 .PHONY: project
-launch_py3:
-	python3 app/main.py
-
-.PHONY: project
-launch_py:
-	python app/main.py
+launch_py3: # Launch the main file with python 3
+	@export PYTHONPATH=$(pwd) && python3 app/main.py
+launch_py: # Launch the main file with python
+	@export PYTHONPATH=$(pwd) && python app/main.py
 
 ####----Package Release----####
 .PHONY: build
@@ -79,13 +80,23 @@ publish: ## publish a release to pypi.
 build-and-publish: build publish ## Build and publish.
 
 ####----Documentation----####
-.PHONY: docs-test
-docs-test: ## Test if documentation can be built without warnings or errors
-	@mkdocs build -s
-
 .PHONY: docs
-docs: ## Build and serve the documentation
-	@mkdocs serve
+docs: ## Launch mkdocs documentation locally
+	poetry run mkdocs serve
+
+docs_build: ## Build mkdocs for local test
+	poetry run mkdocs build
+
+docs_launch_local: ## Launch mkdocs documentation locally with the local building artefacts
+	poetry run mkdocs build
+	poetry run mkdocs serve -v --dev-addr=0.0.0.0:8000
+
+docs_deploy: ## Deploy mkdocs documentation to github pages
+	poetry run mkdocs build -c -v --site-dir public
+	poetry run mkdocs gh-deploy --force
+
+docs_public: ## Build mkdocs for official online release
+	poetry run mkdocs build -c -v --site-dir public
 
 ####----Docker----####
 .PHONY: docker
@@ -125,11 +136,10 @@ clean_volumes: ## clean the docker volumes
 help: ## Ask for help in the Makefile
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: project_clean
+.PHONY: project_restore
 clean: ## Clean the projects of unwanted cached folders
 	rm -rf **/.ipynb_checkpoints **/.pytest_cache **/__pycache__ **/**/__pycache__ ./notebooks/ipynb_checkpoints .pytest_cache ./dist ./volumes
 
-.PHONY: project_restore
 restore: ## Restore the projects to the start (hard clean)
 	rm -rf **/.ipynb_checkpoints **/.pytest_cache **/__pycache__ **/**/__pycache__ ./notabooks/ipynb_checkpoints .pytest_cache ./dist .venv poetry.lock
 

@@ -49,7 +49,6 @@
     "ms-playwright.playwright",
     "pnp.polacode",
     "ms-ossdata.vscode-postgresql",
-    "alefragnani.project-manager",
     "ms-python.vscode-pylance",
     "ms-python.pylint",
     "HardeepSingh.pyscript",
@@ -73,7 +72,6 @@
     "Gruntfuggly.todo-tree",
     "vscode-icons-team.vscode-icons",
     "tomoki1207.pdf",
-    "Vue.volar",
     "ms-vscode-remote.remote-wsl",
     "redhat.vscode-yaml"
   ]
