@@ -24,8 +24,9 @@
       "create_examples.sh"
     ],
     "_template": ".",
-    "_output_dir": ".",
-    "_repo_dir": "."
+    "_output_dir": "/Users/anguzzo/Dropbox/Progetti/PERSONALI/PythonBiellaGroup/Bear",
+    "_repo_dir": ".",
+    "_checkout": null
   },
   "_cookiecutter": {
     "project": "testone",

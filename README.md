@@ -10,179 +10,197 @@
   <p align="center">
     <h3> Base Environment for Any Reasonable project</h3>
     <br />
-    <a href="your_link"><strong> &#128217 Explore the docs</strong></a>
     <br />
-    <br />
-    <a href="your_link">View Demo</a>
     ·
-    <a href="https://github.com/PythonBiellaGroup/Bear/issues">Report Bug</a>
+    <a href="https://github.com/PythonBiellaGroup/Bear/issues">Riporta un bug</a>
     ·
-    <a href="https://github.com/PythonBiellaGroup/Bear/pulls">Request Feature</a>
+    <a href="https://github.com/PythonBiellaGroup/Bear/pulls">Richiedi una feature o un miglioramento</a>
   </p>
 </div>
 
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Elenco dei contenuti</summary>
   <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#il-progetto">Il progetto</a></li>
+    <li><a href="#requisiti">Il progetto</a></li>
+    <li><a href="#costruito-con">Costruito con</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#how-to-mantain-it">How to maintain it</a></li>
-    <li><a href="#technical-documentation">Technical Documentation</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#known-issues">Known issues</a></li>
-    <li><a href="#contacts">Contacts</a></li>
+    <li><a href="#utilizzo">Utilizzo</a></li>
+    <li><a href="#come-mantenerlo">Come mantenerlo</a></li>
+    <li><a href="#documentazione-tecnica">Documentazione tecnica</a></li>
+    <li><a href="#contribuire">Contribuire</a></li>
+    <li><a href="#licenza">Licenza</a></li>
+    <li><a href="#problemi-riscontrati">Problemi riscontrati</a></li>
+    <li><a href="#contatti">Contatti</a></li>
     <li><a href="#references">References</a></li>
   </ol>
 </details>
 
-## About The Project
+## Il progetto
 
-This project it's the base template for a Python project that we are using in PythonBiellaGroup to create our tools, libraries and projects.
+Questo progetto è un template base per ogni Progetto Python che utilizziamo in tutte le repository di Python Biella Group per creare strumenti, librerie e progetti.
 
-We call it **Bear** because it's a **B**ase **E**nvironment for **A**ny **R**easonable project and also because the bear is the symbol of the city of Biella (Piedmont) Italy.
+Lo abbiamo chiamato: **Bear** come acronimo di: **B**ase **E**nvironment for **A**ny **R**easonable project e anche perchè bear (l'orso) è il simbolo della città di Biella in Italia (Piemonte).
 
-### Built With
+### Requisiti
 
-It's based on **Modern Python Tools** such as:
-- cookiecutter: for templating
-- poetry: for dependency management
-- pdm: for dependency management
-- flake8: for linting
-- mypy: for static type checking
-- black: for code formatting
-- bandit: for security checks
-- pre-commit: for pre-commit hooks
-- ruff: for linting
+Per questo progetto sono necessari i seguenti requisiti che devono essere installati:
 
-We suggest to use **VSCode** as IDE for this project since you can find a lot of prepared configurations for:
+- Python: >=3.10 <=3.12
+- Poetry: >= 1.8.1
+
+Raccomandiamo di installare **Poetry** utilizzando **Pyenv**, seguendo la guida ufficiale sul sito.
+
+### Costruito con
+
+Il progetto è basato sullo **stack tecnologico moderno di Python** come:
+
+- **cookiecutter**: per la gestione del template
+- **poetry**: per la gestione delle dipendenze
+- **ruff**: per il linting e il controllo del codice
+- **mypy**: per lo static type checking
+- **black**: per la formattazione del codice (anche se può farlo ruff)
+- **bandit**: per i controlli di sicurezza del codice (anche se può farlo ruff)
+- **pre-commit**: per la gestione dei test e dei controlli pre-commit.
+- **pydantic**: per il type checking evoluto
+- **pydantic-settings**: per la gestione delle configurazioni
+
+Suggeriamo di utilizzare **VSCode** come IDE per questo progetto in quanto puoi trovare una serie di configurazioni pronte per:
+
 - debugging
 - testing
 - settings
 - extensions
-- testone
+- sviluppo nei containers
 
-You can find and extensive documentation created with **mkdocs** to [this github page link](https://pythonbiellagroup.github.io/bear/)
+Puoi trovare un'estensiva documentazione aggiuntiva creata con **mkdocs** disponibile sul [nostro sito](https://pythonbiellagroup.github.io/bear/)
 
 ## Roadmap
 
-- [x] Fix cookiecutter for windows powershell usage
-- [ ] Add mkdocs implementation on Base package with an example with python code
-- [ ] Publish mkdocs documentation page on gitlab pages
-- [ ] Add sphynx implementation with cookiecutter rule to choose between mkdocs and sphynx
-- [x] Fix pre-commit
-- [ ] Add better implementation of detect-secrets
-- [ ] Add a system to check dependencies updates, vulnerabilities and security issues
-- [x] Better README documentation and CONTRIBUTING documentation
-- [x] Fix the docker with poetry
-- [x] Fix the devcontainer
-- [x] Add a docker container with PDM installation
-- [ ] Add gitlab pipeline example
-- [ ] Add github pipeline example
-- [x] Add package build
+- [x] Aggiornare cookiecutter in modo che possa funzionare anche su windows con powershell
+- [ ] Aggiornare l'implementazione di mkdocs sul pacchetto Base con gli esempi di codice Python
+- [ ] Pubblicare l'esempio della documentazione di mkdocs su github page
+- [ ] Aggiungere l'implementazione e i comandi di sphynx in modo da scegliere tra mkdocs e sphynx durante l'installazione
+- [x] Aggiungere e migliorare pre-commit
+- [ ] Migliore implementazione di detect-secrets
+- [ ] Aggiungere un sistema per controllare l'update delle dipendenze, vulnerabilità e problemi di sicurezza
+- [x] Miglioramento del README e nuova sezione su come contribuire
+- [x] Aggiornare il docker dell'applicazione con Poetry
+- [x] Aggiornare il devcontainer
+- [ ] Esempio di pipeline con gitlab
+- [ ] Esempio di pipeline con github
+- [x] Possibilità di fare la build del pacchetto con Poetry
+- [ ] Test incrociati su diverse versioni di Python utilizzando tox
 
-See the [open issues](https://github.com/PythonBiellaGroup/Bear/issues) for a full list of proposed features (and known issues).
+Guarda le [open issues](https://github.com/PythonBiellaGroup/Bear/issues) per la lista di feature e miglioramenti proposti (oltre ai problemi degli altri utenti).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">torna all'inizio</a>)</p>
 
-## Usage
+## Utilizzo
 
-You can use this repository as a template to create your own project with **cookiecutter**
+Puoi utilizzare questa repository come template per creare i tuoi progetti Python con **cookiecutter**
 
-Just remember to add **cookiecutter** as a dependency into your local version installation of python using pip (or something else)
+Come prima cosa ricordati di installare **cookiecutter** come dipendenza nella tua versione locale di Python utilizzando pip.
+
 ```bash
 pip install cookiecutter
 ```
 
-You can use this following command (both on Windows and Posix systems):
+Puoi utilizzare i seguenti comandi per scaricare e configurare il progetto in locale (funziona sia su Windows che sistemi Posix)
+
 ```bash
-# If you are using https
+# Se usi https
 cookiecutter https://github.com/PythonBiellaGroup/Bear.git
 
-# If you are using ssh
+# Se usi ssh
 cookiecutter git@github.com:PythonBiellaGroup/Bear.git
 ```
 
-once you launch this commands just follow the guide and fill the required fields.
+Una volta lanciato il comando segui la guida nel terminale per riempire i campi e configurare il progetto.
 
-You can also create an Alias for this command to make it easier to use it in your terminal:
+Puoi anche creare un alias per questo comando nel tuo terminale, rendendo più facile il download:
+
 ```bash
-# If you are using https
+# Se stai utilizzando https
 alias pbg-project="cookiecutter https://github.com/PythonBiellaGroup/Bear.git --overwrite-if-exists"
 
-# If you are using ssh
+# Se hai configurato ssh
 alias pbg-project="cookiecutter git@github.com:PythonBiellaGroup/Bear.git --overwrite-if-exists"
 ```
 
-so you can use simply the command: `pbg-project` after you restart your terminal to download and create a new project.
+Una volta configurato l'alias e riaperto il terminale puoi usare semplicemente il comando: `pbg-project` per scaricare il template e creare il nuovo progetto.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Torna all'inizio</a>)</p>
 
-## How to maintain it
+## Come mantenerlo
 
-Unfortunately there is no automatic way to update the templates inside cookiecutter yet, you have to do it manually.
+Sfortunatamente non c'è un modo automatico per aggiornare il template cookiecutter, quindi è necessario fare gli aggiornamenti manualmente.
 
-1. Clone the repository
-2. Launch the dependency installation using: poetry or pdm
+1. Clona la repository (oppure fai un fork e successivamente una pull request)
+2. Lancia l'installazione delle dipendenze utilizzando poetry
    1. `poetry install`
-   2. or `pdm install`
-3. Modify something
-4. If you want to test a specific inner template (like the Base template) you can launch: `cookiecutter .` to test cookiecutter project generation
-   1. After that you can modify the template
-   2. When you finish your modification you have to copy and paste all the modifications manually inside the cookiecutter generation folder
-5. Then remember to open a pull request or push to the repository (in develop firtst) if you have the permissions.
+3. Modifica quello che è necessario
+4. Se vuoi testare il template interno puoi lanciare il comando: `make bake-test` per testare la generazione del progetto con cookiecutter, dopo di che:
+   1. Modifica il template nella nuova finestra di vscode che si aprirà
+   2. Quando hai finito le modifiche ricordati di copiare (a mano) i cambiamenti nella repository originale all'interno del template
+5. Infine apri una pull request oppure fai un push nella repository (meglio prima in develop) se hai i permessi.
 
-Please remember also to follow a Gitflow workflow and to use the **develop** branch as the main branch for development.
+Ricordati di seguire il Gitlflow workflow e di usare la branch **develop** per sviluppare invece di main.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Prima di pubblicare una nuova versione su main o di fare una pull request cerca di testare che tutto funzioni bene.
 
-### Technical Documentation
+<p align="right">(<a href="#readme-top">Torna all'inizio</a>)</p>
 
-We use **mkdocs** to create the documentation for this project.
+### Documentazione tecnica
 
-To launch the documentation locally:(remember to install the python env with poetry or pdm before):
+Utilizziamo **mkdocs** per creare la documentazione di questo progetto
+
+per lanciare la documentazione in locale usa il comando:
+
 ```bash
 mkdocs serve
 ```
 
-If you want to prepare the build artifacts for the **gitlab pages** documentation, you have to run:
+Se vuoi prepare la build degli artefatti prima di rilasciare su **github pages** puoi lanciare:
+
 ```bash
 mkdocs build
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Per altre informazioni su mkdocs rimandiamo alla repository del nostro sito realizzata interamente in mkdocs e un buon esempio di come si può configurare [website](https://github.com/PythonBiellaGroup/website)
 
-## Contributing
+<p align="right">(<a href="#readme-top">Torna all'inizio</a>)</p>
 
-You can help us to improve this project by opening issues or doing some pull request if you want to add more functionalities or if you want to fix some bugs.
+## Contribuire
 
-Please follow the [Contributing guidelines](CONTRIBUTING.md) to contribute to this project.
+Puoi contribuire a questo progetto aprendo delle issue su github o facendo delle pull request per aggiungere nuove funzionalità o correggere alcuni bugs.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Per favore segui le linee guide [Contributing guidelines](CONTRIBUTING.md) per contribuire al progetto.
 
-## License
+<p align="right">(<a href="#readme-top">Torna all'inizio</a>)</p>
 
-This repository is licensed under the MIT license. See LICENSE file for details.
+## Licenza
 
-If you use this repository in your work, please cite it as or just write to us to say thanks with your feedback and experience :)
+Questa repository utilizza la licenza MIT. Guarda il file: LICENSE per ulteriori dettagli.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Se utilizzi questa repository per il tuo lavoro per favore citaci oppure scrivi solamente un messaggio sui nostri canali di comunicazione per ringraziarci e darci un feedback sulla tua esperienza :)
 
-## Known issues
 
-With mac if you want to use `devcontainer` with vscode probably you will experience a long building time on the first time. This is due to the `amd64` base docker image we are using as a baseline.
+<p align="right">(<a href="#readme-top">Torna all'inizio</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Problemi riscontrati
 
-## Contacts
+Su mac se vuoi utilizzare `devcontainer` con `vscode` probabilmente dovrai aspettare parecchio la prima volta. Questo è causato da `amd64` docker base image che stiamo utilizzando come baseline e perchè il mac la deve virtualizzare utilizzando Rosetta.
+
+<p align="right">(<a href="#readme-top">Torna all'inizio</a>)</p>
+
+## Contatti
 
 Reach out the community of PythonBiellaGroup!
 
 [![Contacts][contacts-shield]][contacts-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Torna all'inizio</a>)</p>
 
 ## References
 
