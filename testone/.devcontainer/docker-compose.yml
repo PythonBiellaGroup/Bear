@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  develop:
+    platform: linux/amd64
+    build:
+      dockerfile: ./Docker/dev.dockerfile
+      context: ../
+    restart: always
+    environment:
+      LOG_VERBOSITY: ${LOG_VERBOSITY:-DEBUG}
+    volumes:
+      - ..:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
