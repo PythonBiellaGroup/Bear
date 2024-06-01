@@ -1,7 +1,7 @@
 {
-    "project": "python-skeleton",
+    "project": "Your project name",
     "project_description": "Short description of the project and the package",
-    "author": "Andrea Guzzo",
+    "author": "PythonBiellaGroup",
     "directory_name": "{{cookiecutter.project.lower().strip().replace(' ','-')}}",
     "open_source_license": [
         "Not open source",

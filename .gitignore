@@ -8,13 +8,20 @@
 #### > CUSTOM RULES ####
 ########################
 
-replay
 .DS_Store
 .venv
 .pdm.toml
 .ruff_cache
-testone
-python-skeleton
+.pdm-python
+.env
+.python-version
+logs
+!.devcontainer
+!.flake8
+data
+duckdb
+test/db/files/*
+test/db
 
 #We don't want to push the data
 *.csv
@@ -27,14 +34,8 @@ python-skeleton
 #Remove also the saved models
 saved_models
 
-#Custom rules
-
-!.env
-.python-version
-logs
-*.csv
-!.devcontainer
-!.flake8
+# Mkdocs
+site
 
 ##########################################
 #### > PyCharm e JetBrains con JIRA  #####
@@ -498,5 +499,4 @@ dmypy.json
 cython_debug/
 
 # data and backup folders used by db
-data/
 backup/

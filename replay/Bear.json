@@ -1,0 +1,43 @@
+{
+  "cookiecutter": {
+    "project": "testone",
+    "project_description": "local test for tempy",
+    "author": "PBG",
+    "directory_name": "testone",
+    "open_source_license": "MIT",
+    "_copy_without_render": [
+      ".vscode/*",
+      "__cc_*",
+      "google_no_types.mustache",
+      "test_create.py",
+      "post_gen_project.py",
+      "pre_gen_project.py",
+      ".pre-commit-config.yaml",
+      "codecov.yaml",
+      ".github/*",
+      ".gitlab/*",
+      "docs/*",
+      "Makefile",
+      "mypy.ini",
+      ".flake8",
+      ".env",
+      "create_examples.sh"
+    ],
+    "_template": ".",
+    "_output_dir": ".",
+    "_repo_dir": "."
+  },
+  "_cookiecutter": {
+    "project": "testone",
+    "project_description": "local test for tempy",
+    "author": "PBG",
+    "directory_name": "testone",
+    "open_source_license": [
+      "MIT",
+      "Not open source",
+      "LGPL3",
+      "GPL3",
+      "APACHE2"
+    ]
+  }
+}
