@@ -1,27 +1,27 @@
-# How too contribute
+# Come contribuire
 
-Contributions it's the most important things for us!!
+Le contribuzioni sono la cosa più importante per noi!!
 
-We are a community and without your help and the help of the contributors we cannot do nothing :)
+Siamo una comunità e senza il tuo aiuto e l'aiuto dei contributori non possiamo fare nulla :)
 
-So first of all: THANK YOU!
+Quindi, prima di tutto: GRAZIE!
 
-If you want to contribute to this repository please check this requirements before:
+Se desideri contribuire a questo repository, controlla questi requisiti prima:
 
-- Have poetry and python installed: check the `pyproject.toml` to find the right versions used in this project
-- You can install and use also `pdm`, it's configured but not officially supported in this repository
-- Have `makefile` or `just` installed. We suggest to use `just` because it's more modern and easily to install also on windows.
+- Avere poetry e python installati: controlla il `pyproject.toml` per trovare le versioni corrette utilizzate in questo progetto
+- Puoi installare e utilizzare anche `pdm`, è configurato ma non supportato ufficialmente in questo repository
+- Avere `makefile` o `just` installati. Suggeriamo di utilizzare `just` perché è più moderno e facile da installare anche su Windows.
 
-We recommend to use Visual Studio Code, you can find a list of useful extensions and a dedicated Python profile inside the `.vscode` folder.
+Consigliamo di utilizzare Visual Studio Code, puoi trovare un elenco di estensioni utili e un profilo Python dedicato all'interno della cartella `.vscode`.
 
-## Develop and update
+## Sviluppo e aggiornamento
 
-If you want to launch the project and test it you need to:
+Se desideri avviare il progetto e testarlo, devi:
 
-1. Fork the project in your github profile. Then clone locally.
-2. Create a new branch for example: `develop`
-3. Install the libraries (we suggest to use poetry): `poetry install --with dev` . This command will create a .venv inside the project folder with all the dependencies updated.
-4. Then you can start modifying the files inside the folder.
-5. If you want to test if everything it's working you have to `cookiecutter` the project, you can do it by using just or Makefile with the command: `make bake-test` or `just bake-test`. This function can generate a test project called **testone** inside the project folder, if vscode is not automatically open, you can use `code testone` to open the project in a new vscode window and check if it's working.
-6. After you modify something in testone project unfortunately you need to copy and paste the updates inside the `cookiecutter.directory_name`.
-7. After you updated everything remember to create a pull request from your github project to the original project so we can review the modifications and update the public code.
+1. Forkare il progetto nel tuo profilo GitHub. Quindi clonalo in locale.
+2. Crea un nuovo branch, ad esempio: `develop`
+3. Installa le librerie (suggeriamo di utilizzare poetry): `poetry install --with dev`. Questo comando creerà una cartella .venv all'interno della cartella del progetto con tutte le dipendenze aggiornate.
+4. Quindi puoi iniziare a modificare i file all'interno della cartella.
+5. Se desideri testare se tutto funziona, devi "cookiecutterizzare" il progetto, puoi farlo utilizzando just o Makefile con il comando: `make bake-test` o `just bake-test`. Questa funzione può generare un progetto di test chiamato **testone** all'interno della cartella del progetto, se Visual Studio Code non si apre automaticamente, puoi utilizzare `code testone` per aprire il progetto in una nuova finestra di Visual Studio Code e verificare se funziona.
+6. Dopo aver modificato qualcosa nel progetto di testone, purtroppo devi copiare e incollare gli aggiornamenti all'interno della `cookiecutter.directory_name`.
+7. Dopo aver aggiornato tutto, ricorda di creare una pull request dal tuo progetto GitHub al progetto originale in modo che possiamo esaminare le modifiche e aggiornare il codice pubblico.
