@@ -1,0 +1,8 @@
+terminal:
+  # This can be any image that has the necessary runtime environment for your project.
+  image: ubuntu:20.04
+  # before_script:
+  #   - sudo apt update && sudo apt upgrade -y
+  # script: sleep 60
+  variables:
+    TEST_ENV: "test"

@@ -13,7 +13,7 @@
       "cwd": "${workspaceFolder}",
       "env": {
         "PYTHONPATH": "${cwd}",
-        "LOG_VERBOSITY": "DEBUG"
+        "VERBOSITY": "DEBUG"
       }
     },
     {
@@ -25,8 +25,40 @@
       "cwd": "${workspaceFolder}",
       "env": {
         "PYTHONPATH": "${cwd}",
-        "LOG_VERBOSITY": "DEBUG"
+        "VERBOSITY": "DEBUG"
       }
-    }
+    },
+    {
+      "name": "Python: Streamlit",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "args": [
+        "run",
+        "${workspaceFolder}/app/main.py"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${cwd}"
+      }
+    },
+    {
+      "name": "FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "app.main:app",
+        "--reload",
+        "--port",
+        "8044"
+      ],
+      "jinja": true,
+      "env": {
+        "PYTHONPATH": "${cwd}",
+        "TEST": "debugger"
+      }
+    },
   ]
 }

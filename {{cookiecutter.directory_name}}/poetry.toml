@@ -1,8 +1,0 @@
-[virtualenvs]
-in-project = true
-create = true
-prefer-active-python = true
-
-# [http-basic.private]
-# username = "user"
-# password = "pw"

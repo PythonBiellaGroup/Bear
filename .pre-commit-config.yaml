@@ -1,47 +1,44 @@
 ---
 default_language_version:
-  python: python3.10
-default_stages: [commit, push]
+  python: python3.12
+default_stages: [pre-commit, pre-push]
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v4.4.0
     hooks:
       - id: check-added-large-files # Prevent giant files from being committed
         args: [--maxkb=5000]
+      - id: check-json # Attempts to load all json files to verify syntax
+        exclude: ^(.dev|.*\.vscode)
       - id: check-merge-conflict # Check for files that contain merge conflict strings
       - id: check-toml # Attempts to load all TOML files to verify syntax
       - id: detect-private-key # Checks for the existence of private keys
-      # - id: check-json # Attempts to load all json files to verify syntax
-      #   exclude: ^.vscode
-      # - id: pretty-format-json # Checks that all your JSON files are pretty.
-      #   args: [--autofix, --indent, "4"]
-      #   exclude: ^.vscode, ^.venv, ^.github, ^.gitlab, ^.pytest_cache, ^__pycache__
-  - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.35.1
-    hooks:
-      - id: yamllint
-        files: \.(yaml|yml)$
-        types: [file, yaml]
-        entry: yamllint --strict
-  - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.2
-    hooks:
-      - id: gitleaks
-        # name: gitleaks
-        # entry: gitleaks protect --verbose --staged --no-banner
-        # language: system
-        # types: [file]
+      - id: pretty-format-json # Checks that all your JSON files are pretty. "Pretty" here means that keys are sorted and indented. You can configure this with the following commandline options
+        args: [--autofix]
+        # exclude: ^.vscode
+        exclude: ^(.dev|.*\.vscode)
   - repo: local
     hooks:
       - id: ruff
         name: ruff
-        entry: poetry run ruff --no-cache --force-exclude --fix --exit-non-zero-on-fix --show-fixes .
+        entry: uv run ruff check --no-cache --force-exclude --fix --exit-non-zero-on-fix --show-fixes .
         language: system
         types: [python]
-      - id: check-poetry
-        name: Poetry check
-        description: Validates the structure of the pyproject.toml file
-        entry: poetry check
+      # - id: mypy
+      #   name: mypy
+      #   entry: mypy datalink
+      #   language: system
+      #   types: [python]
+      #   pass_filenames: false
+      - id: detect-secrets
+        name: detect-secrets
+        # entry: git ls-files -z | xargs -0 detect-secrets-hook --baseline .secrets.baseline
+        entry: git diff --staged --name-only -z | xargs -0 detect-secrets-hook --baseline .secrets.baseline
         language: system
-        pass_filenames: false
-        # files: pyproject.toml
+        types: [bash]
+      # - id: detect_secrets
+      #   name: detect_secrets
+      #   entry: uv run detect-secrets scan --baseline .secrets_baseline.json
+      #   language: system
+      #   types: [python]
+      #   exclude: package.lock.json

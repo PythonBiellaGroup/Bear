@@ -1,14 +1,14 @@
 {
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
   "python.envFile": "${workspaceFolder}/.env",
   "python.testing.pytestArgs": [
-    "test"
+    "tests"
   ],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "files.autoSave": "afterDelay",
   "autoDocstring.customTemplatePath": "",
-  "window.title": "PBG Bear | ${rootName} ${separator} ${activeEditorShort}",
+  "window.title": "${rootName} ${separator} ${activeEditorShort}",
   "[python]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 4
@@ -23,6 +23,18 @@
   "editor.inlineSuggest.enabled": true,
   "editor.formatOnType": true,
   "git.autofetch": true,
-  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.defaultFormatter": "charliermarsh.ruff",
   "python.terminal.activateEnvInCurrentTerminal": true,
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  }
 }

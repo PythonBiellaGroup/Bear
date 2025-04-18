@@ -4,7 +4,7 @@ services:
     #image: endpoint where your image is : develop
     platform: linux/amd64
     build:
-      dockerfile: ./Docker/app.poetry.dockerfile
+      dockerfile: ./Docker/python.dockerfile
       context: .
     container_name: app-core
     env_file:
