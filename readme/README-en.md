@@ -13,8 +13,6 @@
     <a href="your_link"><strong> &#128217 Explore the docs</strong></a>
     <br />
     <br />
-    <a href="your_link">View Demo</a>
-    ·
     <a href="https://github.com/PythonBiellaGroup/Bear/issues">Report Bug</a>
     ·
     <a href="https://github.com/PythonBiellaGroup/Bear/pulls">Request Feature</a>
