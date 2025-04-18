@@ -64,3 +64,17 @@ If you discover any security vulnerabilities, please report them by following th
 ## Contacts
 
 You can contact us following the links inside our website [Python Biella Group](https://www.pythonbiellagroup.it/)
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/PythonBiellaGroup/Bear.svg?style=for-the-badge
+[contributors-url]: https://github.com/PythonBiellaGroup/Bear/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/PythonBiellaGroup/Bear.svg?style=for-the-badge
+[forks-url]: https://github.com/PythonBiellaGroup/Bear/forks
+[stars-shield]: https://img.shields.io/github/stars/PythonBiellaGroup/Bear.svg?style=for-the-badge
+[stars-url]: https://github.com/PythonBiellaGroup/Bear/stargazers
+[issues-shield]: https://img.shields.io/github/issues/PythonBiellaGroup/Bear.svg?style=for-the-badge
+[issues-url]: https://github.com/PythonBiellaGroup/Bear/issues
+[license-shield]: https://img.shields.io/github/license/PythonBiellaGroup/Bear.svg?style=for-the-badge
+[license-url]: https://github.com/PythonBiellaGroup/Bear/blob/main/LICENSE
+[contacts-shield]: https://img.shields.io/badge/linktree-39E09B?style=for-the-badge&logo=linktree&logoColor=white
+[contacts-url]: https://linktr.ee/PythonBiellaGroup
