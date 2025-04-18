@@ -9,9 +9,6 @@
   <p align="center">
     <h3> Ambiente Base per Qualsiasi Progetto Ragionevole</h3>
     <br />
-    <a href="your_link"><strong> &#128217 Esplora la documentazione</strong></a>
-    <br />
-    <br />
     <a href="https://github.com/PythonBiellaGroup/Bear/issues">Segnala un Bug</a>
     ·
     <a href="https://github.com/PythonBiellaGroup/Bear/pulls">Richiedi una Funzionalità</a>

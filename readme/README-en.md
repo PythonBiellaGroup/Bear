@@ -10,9 +10,6 @@
   <p align="center">
     <h3> Base Environment for Any Reasonable project</h3>
     <br />
-    <a href="your_link"><strong> &#128217 Explore the docs</strong></a>
-    <br />
-    <br />
     <a href="https://github.com/PythonBiellaGroup/Bear/issues">Report Bug</a>
     ·
     <a href="https://github.com/PythonBiellaGroup/Bear/pulls">Request Feature</a>
